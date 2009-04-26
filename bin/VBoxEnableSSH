@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ $# -lt 1 ] ; then
+    echo "Usage: $0 <machine>"
+    exit 1
+fi
+
+machine="$1"
+
+# This enables port-forwaring for virtual machines with NAT'ed interfaces.
+setdata="VBoxManage setextradata"
+key="VBoxInternal/Devices/pcnet/0/LUN#0/Config/ssh"
+$setdata "$machine" "$key/GuestPort" 22
+$setdata "$machine" "$key/Protocol" TCP
+$setdata "$machine" "$key/HostPort" 2222
+
+echo "Okay. You can now ssh to $machine on localhost:2222"

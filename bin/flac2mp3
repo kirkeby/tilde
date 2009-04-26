@@ -1,0 +1,17 @@
+#!/bin/sh
+
+for flac in "$@"
+do
+    mp3="${flac%.flac}.mp3"
+
+    flac -dc "${flac}" | lame -q 2 -V 1 - "$mp3"
+    
+    ARTIST=`metaflac "$flac" --show-tag=ARTIST | iconv -f utf-8 -t iso88591 | sed s/ARTIST=//g`
+    TITLE=`metaflac "$flac" --show-tag=TITLE | iconv -f utf-8 -t iso88591 | sed s/TITLE=//g`
+    ALBUM=`metaflac "$flac" --show-tag=ALBUM | iconv -f utf-8 -t iso88591 | sed s/ALBUM=//g`
+    GENRE=`metaflac "$flac" --show-tag=GENRE | iconv -f utf-8 -t iso88591 | sed s/GENRE=//g`
+    TRACKNUMBER=`metaflac "$flac" --show-tag=TRACKNUMBER | iconv -f utf-8 -t iso88591 | sed s/TRACKNUMBER=//g`
+    YEAR=`metaflac "$flac" --show-tag=DATE | iconv -f utf-8 -t iso88591 | sed s/DATE=//g | cut -b -4`
+
+    id3v2 -t "$TITLE" -T "0$TRACKNUMBER" -a "$ARTIST" -A "$ALBUM" -y "$YEAR" "$mp3"
+done

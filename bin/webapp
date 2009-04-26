@@ -1,0 +1,2 @@
+#!/bin/sh
+exec xulrunner-1.9 /usr/share/prism/application.ini -webapp `basename $0`@prism.app
