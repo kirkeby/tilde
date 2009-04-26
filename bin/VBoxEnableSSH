@@ -7,9 +7,12 @@ fi
 
 machine="$1"
 
+# pcnet is also an option
+devtype="e1000"
+
 # This enables port-forwaring for virtual machines with NAT'ed interfaces.
 setdata="VBoxManage setextradata"
-key="VBoxInternal/Devices/pcnet/0/LUN#0/Config/ssh"
+key="VBoxInternal/Devices/$devtype/0/LUN#0/Config/ssh"
 $setdata "$machine" "$key/GuestPort" 22
 $setdata "$machine" "$key/Protocol" TCP
 $setdata "$machine" "$key/HostPort" 2222
