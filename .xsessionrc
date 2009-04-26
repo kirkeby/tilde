@@ -1,0 +1,2 @@
+. ~/.zshenv
+pgrep syndaemon || syndaemon -d -t -i 1.0
