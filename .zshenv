@@ -1,12 +1,14 @@
-for x in ~/bin ~/opt/*/bin
-do
-    export PATH=${x}:$PATH
-done
-
-#for x in ~/opt/*/share/man
-#do
-#    export MANPATH=${x}:$MANPATH
-#done
+export PATH=$HOME/bin:$PATH
+if [ -d ~/opt ] ; then
+    for x in ~/opt/*/bin
+    do
+        export PATH=${x}:$PATH
+    done
+    #for x in ~/opt/*/share/man
+    #do
+    #    export MANPATH=${x}:$MANPATH
+    #done
+fi
 
 export VISUAL=vim
 

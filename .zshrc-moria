@@ -1,0 +1,4 @@
+# mytunes aliases
+alias mytunes='~/mytunes/mytunes-remote'
+alias n='mytunes next'
+alias l='mytunes limit'

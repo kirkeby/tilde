@@ -1,10 +1,5 @@
+# Nice and simple does it.
 export PS1='%n@%m:%~$ '
-alias ls='ls --color=auto -BFG'
-
-# mytunes aliases
-alias mytunes='~/mytunes/mytunes-remote'
-alias n='mytunes next'
-alias l='mytunes limit'
 
 # Dunno why, but I prefer emacs bindings in my shell.
 bindkey -e
@@ -13,7 +8,7 @@ bindkey -e
 autoload _ssh
 _ssh
 
-# Override _ssh_hosts to use .ssh/config and .ssh/known_hosts
+# Override _ssh_hosts to use .ssh/known_hosts
 _ssh_hosts () {
   if [[ "$IPREFIX" == *@ ]]; then
     _combination -s '[:@]' my-accounts users-hosts \
@@ -29,3 +24,8 @@ _ssh_hosts () {
       done
   fi
 }
+
+# Source per-platform and per-host configurations.
+for postfix in `uname` `hostname` ; do
+    test -e .zshrc-$postfix && source .zshrc-$postfix
+done
