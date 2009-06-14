@@ -4,6 +4,10 @@ export PS1='%n@%m:%~$ '
 # Dunno why, but I prefer emacs bindings in my shell.
 bindkey -e
 
+# Enable command-line completion
+autoload -U compinit
+compinit
+
 # preload SSH completion so that _ssh_hosts can be overridden
 autoload _ssh
 _ssh
