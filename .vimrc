@@ -17,3 +17,6 @@ syntax on
 " hard tabs are evil
 highlight Tabs term=standout ctermbg=red guibg=red
 match Tabs /\t/
+
+" Various temporary-file syntax rules
+autocmd BufNewFile,BufRead psql.edit.* set syntax=sql
