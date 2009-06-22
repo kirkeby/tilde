@@ -14,6 +14,7 @@ set guioptions=-a
 set clipboard=""
 
 syntax on
+filetype plugin indent on
 
 " hard tabs are evil
 highlight Tabs term=standout ctermbg=red guibg=red
