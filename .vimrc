@@ -15,6 +15,7 @@ set guioptions=-a
 set clipboard=""
 
 syntax on
+syntax sync fromstart
 
 " hard tabs are evil
 highlight Tabs term=standout ctermbg=red guibg=red
