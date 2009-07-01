@@ -7,6 +7,8 @@ set smartindent
 set ignorecase
 set smartcase
 set backspace=indent,eol,start 
+set statusline=%f\ %m\ %r\ %=[%l/%L]\ %3c\ 
+set laststatus=2
 
 " Holy fucking christ. Vim must never, ever, ever, *EVER* fucking touch my
 " X clipboard. Vim is *not* a fucking GUI application!
@@ -14,6 +16,8 @@ set guioptions=-a
 set clipboard=""
 
 syntax on
+syntax sync fromstart
+
 filetype plugin indent on
 
 " hard tabs are evil
