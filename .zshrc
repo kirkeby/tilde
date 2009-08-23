@@ -31,5 +31,5 @@ _ssh_hosts () {
 
 # Source per-platform and per-host configurations.
 for postfix in `uname` `hostname` ; do
-    test -e .zshrc-$postfix && source .zshrc-$postfix
+    test -e ~/.zshrc-$postfix && source ~/.zshrc-$postfix
 done
