@@ -11,6 +11,7 @@ if [ -d ~/opt ] ; then
 fi
 
 export VISUAL=vim
+export LANG=en_US.UTF-8
 
 test -d /tmp/$USER || mkdir -p /tmp/$USER
 export TEMP=/tmp/$USER
