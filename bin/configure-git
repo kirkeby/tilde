@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Create .gitconfig
+read -p 'e-mail? ' -i 'mig@ibofobi.dk' -e email
+cat > ~/.gitconfig <<EOF
+[user]
+    name = Sune Kirkeby
+    email = ${email}
+EOF
