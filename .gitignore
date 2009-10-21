@@ -1,0 +1,21 @@
+# Various history files
+.*history
+.lesshst
+.viminfo
+# Various configuration-files in FreeBSD's user-skel
+.bash*
+.*cshrc
+.login
+.login_conf
+.mail_aliases
+.mailrc
+.profile
+.rhosts
+.shrc
+# Stuff we just don't want in the repo.
+.gitconfig
+.ssh/authorized_keys
+.ssh/known_hosts
+# Junk.
+.*.swp
+.zcompdump
