@@ -12,6 +12,7 @@ fi
 
 export VISUAL=vim
 export PAGER=less
+export LANG=en_US.UTF-8
 
 test -d /tmp/$USER || mkdir -p /tmp/$USER
 export TEMP=/tmp/$USER

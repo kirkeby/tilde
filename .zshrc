@@ -1,6 +1,11 @@
 # Nice and simple does it.
 export PS1='%n@%m:%~$ '
 
+# In-core and on-disk history.
+HISTSIZE=200
+SAVEHIST=200
+HISTFILE=~/.zsh_history
+
 # Dunno why, but I prefer emacs bindings in my shell.
 bindkey -e
 
