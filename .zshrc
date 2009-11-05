@@ -13,6 +13,11 @@ bindkey -e
 autoload -U compinit
 compinit
 
+# Enable C-x-e shortcut to edit command-line in vim
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+
 # preload SSH completion so that _ssh_hosts can be overridden
 autoload _ssh
 _ssh
