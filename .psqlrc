@@ -1,3 +1,6 @@
-\x
+\set QUIET on
+\timing
 \set ON_ERROR_ROLLBACK on
-\pset pager on
+\pset pager always
+\pset null '[null]'
+\set QUIET off
