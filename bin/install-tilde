@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Install this checkout in $HOME.
+
+# Pre-flight checks.
+cd "`dirname $0`/.."
+
+if [ -e $HOME/.git ] ; then
+    echo "Error: ~/.git already exists" >&2
+    exit 1
+fi
+
+# Install checkout.
+mv .git $HOME/.git
+find . | while read name
+do
+    dir=`dirname ~/$name`
+    test -d $dir || mkdir -p $dir
+    test -e ~/$name || mv $name ~/$name
+done
+
+# Optionally configure git.
+test -e ~/.gitconfig || ./bin/configure-git
