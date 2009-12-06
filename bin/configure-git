@@ -3,6 +3,8 @@
 # Create .gitconfig
 read -p 'e-mail? ' -i 'mig@ibofobi.dk' -e email
 cat > ~/.gitconfig <<EOF
+[color]
+    ui = auto
 [user]
     name = Sune Kirkeby
     email = ${email}
