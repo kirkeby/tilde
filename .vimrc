@@ -15,11 +15,13 @@ set guioptions=-a
 set clipboard=""
 
 syntax on
-syntax sync fromstart
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 " hard tabs are evil
 highlight Tabs term=standout ctermbg=red guibg=red
 match Tabs /\t/
 
 " Various temporary-file syntax rules
+autocmd BufNewFile,BufRead * syntax sync fromstart
 autocmd BufNewFile,BufRead psql.edit.* set syntax=sql
