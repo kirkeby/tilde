@@ -1,1 +1,2 @@
 caption always " %H/%l %= %-w%{m}%n*%t%{-}%+w "
+defscrollback 1000
