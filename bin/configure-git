@@ -8,4 +8,6 @@ cat > ~/.gitconfig <<EOF
 [user]
     name = Sune Kirkeby
     email = ${email}
+[core]
+    excludesfile = ${HOME}/.gitignore
 EOF
