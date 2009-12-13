@@ -9,6 +9,11 @@ HISTFILE=~/.zsh_history
 # Dunno why, but I prefer emacs bindings in my shell.
 bindkey -e
 
+# Make rm, mv and cp safe for feeble-minded fools (i.e. me).
+alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
+
 # Enable command-line completion
 autoload -U compinit
 compinit
