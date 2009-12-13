@@ -17,6 +17,8 @@ bindkey -e
 autoload -U compinit
 compinit
 
+fignore=(.o .pyc \~)
+
 # Enable C-x-e shortcut to edit command-line in vim
 autoload edit-command-line
 zle -N edit-command-line
@@ -26,7 +28,7 @@ bindkey '^Xe' edit-command-line
 autoload _ssh
 _ssh
 
-# Override _ssh_hosts to use .ssh/known_hosts
+# Override _ssh_hosts to use ~/.ssh/known_hosts
 _ssh_hosts () {
   if [[ "$IPREFIX" == *@ ]]; then
     _combination -s '[:@]' my-accounts users-hosts \
