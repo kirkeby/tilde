@@ -6,6 +6,10 @@ HISTSIZE=200
 SAVEHIST=200
 HISTFILE=~/.zsh_history
 
+# Automatic pushd on cd.
+DIRSTACKSIZE=8
+setopt autopushd pushdminus pushdsilent pushdtohome
+
 # Dunno why, but I prefer emacs bindings in my shell.
 bindkey -e
 
