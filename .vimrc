@@ -20,7 +20,7 @@ noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 " Highlight evil hard tabs and trailing white-space
-highlight Evile term=standout ctermbg=red guibg=red
+highlight Evil term=standout ctermbg=red guibg=red
 match Evil /\t/
 match Evil /  *$/
 
