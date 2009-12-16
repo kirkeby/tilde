@@ -1,1 +1,10 @@
-alias ls='ls -BFG'
+# Function for emulating GNU ls's option to ignore certain files
+function ls() {
+    if [[ $# -eq 0 ]]
+    then
+        set -- *~(*.pyc|*~)(N)
+        [[ $# -ne 0 ]] && set -- -d $*
+    fi
+    /bin/ls -BFG $*
+}
+

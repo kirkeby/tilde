@@ -22,6 +22,8 @@ alias cp='cp -i'
 autoload -U compinit
 compinit
 
+# Globbing options
+setopt extendedglob
 fignore=(.o .pyc \~)
 
 # Enable C-x-e shortcut to edit command-line in vim
