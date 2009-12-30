@@ -16,13 +16,16 @@ set guioptions=-a
 set clipboard=""
 
 syntax on
+filetype plugin on
+
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
-" Highlight evil hard tabs and trailing white-space
-highlight Evil term=standout ctermbg=red guibg=red
+" Highlight evil hard tabs, trailing white-space and overlong lines
+highlight Evil term=standout ctermbg=red ctermfg=yellow
 match Evil /\t/
 match Evil /  *$/
+match Evil /.\{79,\}/
 
 " Various temporary-file syntax rules
 autocmd BufNewFile,BufRead * syntax sync fromstart
