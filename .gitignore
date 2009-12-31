@@ -1,4 +1,14 @@
+*~
 .zcompdump
 .ssh/known_hosts
 .viminfo
 .*.swp
+.*history
+.lesshst
+.fontconfig/
+.gitconfig
+.ipython
+.pylint.d
+.python-eggs
+.ssh/authorized_keys
+.subversion
