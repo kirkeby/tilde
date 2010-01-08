@@ -6,7 +6,6 @@
 .*history
 .lesshst
 .fontconfig/
-.gitconfig
 .ipython
 .pylint.d
 .python-eggs
