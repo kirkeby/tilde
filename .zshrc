@@ -26,6 +26,7 @@ compinit
 
 # Globbing options
 setopt extendedglob
+unsetopt nomatch
 fignore=(.o .pyc \~)
 
 # Enable C-x-e shortcut to edit command-line in vim
