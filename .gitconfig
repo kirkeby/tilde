@@ -15,3 +15,7 @@
     name = Sune Kirkeby
     email = mig@ibofobi.dk
     excludesfile = ~/.gitignore
+[push]
+    default = matching
+[pull]
+    default = matching
