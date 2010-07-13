@@ -1,3 +1,5 @@
+[core]
+    excludesfile = ~/.gitignore
 [color]
     ui = auto
 [alias]
@@ -5,6 +7,10 @@
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
     st = status
     stat = status
+    cp = cherry-pick
+    up = svn rebase
+[push]
+    default = matching
 [user]
     name = Sune Kirkeby
     email = mig@ibofobi.dk
