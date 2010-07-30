@@ -1,0 +1,4 @@
+#!/bin/sh
+test $# -gt 0 || set -- '[%H:%M:%S]'
+export date_fmt="$1"
+exec perl -ple '$now = `date "+$ENV{date_fmt}"`; chomp $now; s/^/$now /'
