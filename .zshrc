@@ -18,6 +18,8 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
 
+alias vmi=vim
+
 # Enable command-line completion
 autoload -U compinit
 compinit
