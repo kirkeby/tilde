@@ -24,6 +24,9 @@ alias vmi=vim
 autoload -U compinit
 compinit
 
+# Always fall back to plain ol' filename completion, if all others fail.
+zstyle ':completion:*' completer _complete _ignored _files
+
 # Globbing options
 setopt extendedglob
 unsetopt nomatch
