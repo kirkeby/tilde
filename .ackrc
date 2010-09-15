@@ -1,3 +1,5 @@
 --ignore-dir=vendor
 --ignore-dir=build
 --ignore-dir=dist
+--ignore-dir=cov
+--pager=less -r
