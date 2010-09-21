@@ -1,4 +1,6 @@
 set backup
+"set undofile
+set encoding=utf-8
 set textwidth=78
 set shiftwidth=4
 set softtabstop=4
@@ -6,10 +8,16 @@ set expandtab
 set autoindent
 set ignorecase
 set smartcase
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 set statusline=%f\ %m\ %r\ %=[%l/%L]\ %3c\ 
+set showmode
+set showcmd
 set laststatus=2
 set wildignore=*.swp,*.pyc,*.class,*.o,*~
+set ttyfast
+
+" When formatting text, recognize numbered lists.
+set formatoptions+=n
 
 " Holy fucking christ. Vim must never, ever, ever, *EVER* fucking touch my
 " X clipboard. Vim is *not* a fucking GUI application!
