@@ -19,6 +19,12 @@ set ttyfast
 " When formatting text, recognize numbered lists.
 set formatoptions+=n
 
+" Show invisible characters.
+set list
+set listchars=tab:▸\ 
+"set listchars+=eol:¬
+"set listchars+=trail:♦
+
 " Holy fucking christ. Vim must never, ever, ever, *EVER* fucking touch my
 " X clipboard. Vim is *not* a fucking GUI application!
 set guioptions=-a
