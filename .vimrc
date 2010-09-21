@@ -46,3 +46,8 @@ autocmd BufNewFile,BufRead psql.edit.* set syntax=sql
 
 " Load plugins from .vim/bundles/*
 call pathogen#runtime_prepend_subdirectories(expand('~/.vim/bundles'))
+
+" NERDTree for browsing
+nnoremap <Leader>t :NERDTree<cr>
+let NERDTreeQuitOnOpen=1
+let NERDTreeWinSize=64
