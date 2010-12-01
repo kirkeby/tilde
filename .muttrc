@@ -1,0 +1,178 @@
+# Note: $folder should be set _before_ any other path vars where `+' or `='
+# is used because paths are expanded when parsed
+set folder=~/Mail		# where i keep my mailboxes
+
+set nomarkers
+set abort_unmodified=yes	# automatically abort replies if I don't
+				# change the message
+set alias_file=~/.muttrc-aliases# where I keep my aliases
+#set arrow_cursor		# use -> instead of hiliting the whole line
+#set ascii_chars		# use ASCII instead of ACS chars for threads
+#set askbcc
+#set askcc
+set attribution="[ %n ]"	# how to attribute replies
+unset autoedit			# go to the editor right away when composing
+#set auto_tag			# always operate on tagged messages
+set charset="utf-8"     	# character set for your terminal
+set allow_8bit			# never do Q-P encoding on legal 8-bit chars
+set noconfirmappend		# don't ask me if i want to append to mailboxes
+set confirmcreate		# prompt when creating new files
+set copy=yes			# always save a copy of outgoing messages
+set delete=yes			# purge deleted messages without asking
+set edit_headers		# let me edit the message header when composing
+set editor="vim"                # editor to use when composing messages
+#set editor="emacsclient --alternate-editor vim"
+set fast_reply			# skip initial prompts when replying
+#set fcc_attach			# keep attachments in copies of sent messages?
+#set force_name			# fcc by recipient, create if mailbox doesn't exist
+#set forward_decode		# weed and MIME decode forwaded messages
+set forward_format="[%a: %s]"	# subject to use when forwarding messages
+set forward_quote		# quote the header and body of forward msgs
+#set hdr_format="%4C %Z %{%m/%d} [%2N] %-15.15F (%4c) %s"
+set hdr_format="%4C %Z %{%m/%d} %-15.15F (%4c) %s" # format of the index
+set hdrs			# include `my_hdr' lines in outgoing messages
+#set header			# include message header when replying
+set help			# show the help lines
+#set history=20			# number of lines of history to remember
+set include			# always include messages when replying
+set indent_string="> "		# how to quote replied text
+set locale="C"			# locale to use for printing time
+set mailcap_path="~/.mailcap:/etc/mailcap"
+set mark_old			# i don't care about whether a message is old
+set mail_check=10		# how often to poll for new mail
+set mbox=+mbox			# where to store read messages
+set mbox_type=Maildir
+#set menu_scroll		# no implicit next-page/prev-page
+#set metoo			# remove my address when replying
+set mime_forward		# use message/rfc822 type to forward messages
+set move=no 			# don't ask about moving messages, just do it
+#set pager=less			# some people prefer an external pager
+#set pager_context=3		# no. of lines of context to give when scrolling
+#set pager_format="-%S- %-20.20f %s"	# format of the pager status bar
+set pager_index_lines=6		# how many index lines to show in the pager
+set pager_stop			# don't move to the next message on next-page
+set postponed=+drafts		# mailbox to store postponed messages in
+#set post_indent_string='---end quoted text---'
+#set print=ask-yes		# ask me if I really want to print messages
+set print_command=/bin/false	# how to print things (I like to save trees)
+set noprompt_after		# do not ask me for a command after the external pager exits
+set quote_regexp="^ *[a-zA-Z]*[>:#}]"	# how to catch quoted text
+set read_inc=25			# show progress when reading a mailbox
+set recall=ask-yes		# prompt to recall postponed messages
+#set record=+mbox		# default location to save outgoing mail
+set reply_to			# always use reply-to if present
+# how to identify replies in the subject:
+set reply_regexp="^((re|sv|vedr\.):[ \t]*)+"
+set resolve			#  move to the next message when an action is performed
+set reverse_alias		# attempt to look up my names for people
+set reverse_name		# use my address as it appears in the message
+				# i am replying to
+set nosave_empty		# remove files when no messages are left
+set signature="~/bin/signature|"# file which contains my signature
+set spoolfile=~/Mail/inbox	# where my new mail is located
+#set tilde			# virtual lines to pad blank lines in the pager
+set tmpdir=/tmp/ski		# where to store temp files
+set visual=vim			# editor invoked by ~v in the builtin editor
+set write_inc=25		# show progress while writing mailboxes
+set smart_wrap                  # be a little intelligent when people aren't
+set rfc2047_parameters=yes
+
+# Handle reply-to and friends as per RFC 822
+set followup_to=no
+set honor_followup_to=no
+set ignore_list_reply_to=no
+
+# I subscribe to a lot of mailing lists, so this is _very_ useful.  This
+# groups messages on the same subject to make it easier to follow a
+# discussion.  Mutt will draw a nice tree showing how the discussion flows.
+set sort=threads		# primary sorting method
+set sort_browser=reverse-date	# how to sort files in the dir browser
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+# Character-set aliases for broken MUAs
+#
+charset-hook US-ASCII     ISO-8859-1
+charset-hook x-unknown    ISO-8859-1
+charset-hook windows-1250 CP1250
+charset-hook windows-1251 CP1251
+charset-hook windows-1252 CP1252
+charset-hook windows-1253 CP1253
+charset-hook windows-1254 CP1254
+charset-hook windows-1255 CP1255
+charset-hook windows-1256 CP1256
+charset-hook windows-1257 CP1257
+charset-hook windows-1258 CP1258
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+# Header fields I don't normally want to see
+#
+ignore *		# this means "ignore all lines by default"
+
+# I do want to see these fields, though!
+unignore	date: subject: from: to: cc: reply-to: \
+                x-url: x-homepage:
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+# User Defined Headers
+#
+
+#my_hdr Fcc: =mbox
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+# Specify the order of the headers to appear when displaying a message
+#
+#	hdr_order <hdr1> [ <hdr2> ... ]
+#
+
+unhdr_order *				# forget the previous settings
+hdr_order date subject from to cc delivered-to envelope-to mail-followup-to
+hdr_order x-mailer x-url x-spam-status x-spam-report
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+# Key bindings
+#
+#	maps:
+#		alias		alias menu
+#		attach		attachment menu
+#		browser		directory browser
+#		compose		compose menu
+#		index		message index
+#		pgp		pgp menu
+#		postpone	postponed message recall menu
+#		generic		generic keymap for all of the above
+#		editor		line editor
+#		pager		text viewer
+#		
+
+#macro index d "s=deleted\n" "move message to trash"
+#macro pager d "s=deleted\n" "move message to trash"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+# Automatically use entries from ~/.mailcap to view these MIME types
+#
+#	auto_view <type> [ <type> ... ]
+
+set implicit_autoview=no
+auto_view text/html application/x-tex
+auto_view text/x-vcard text/calendar
+
+alternative_order text/calendar text/plain text/*
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+# I use Mutt on several different machines, so I put local config commands
+# in a separate file so I can have the rest of the settings the same on all
+# machines.
+#
+
+source ~/.muttrc-color
+source ~/.muttrc-local
+source ~/.muttrc-aliases
+
+# EOF

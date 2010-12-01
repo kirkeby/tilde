@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python `dirname $0`/clean-html < "$@" | /usr/bin/html2text

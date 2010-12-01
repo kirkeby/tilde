@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+
+'''A simple script which removes Outlook's crappy XHTML and IE-conditionals,
+so html2text can render it as something approaching readable.'''
+
+import sys
+from BeautifulSoup import BeautifulSoup, Comment
+
+VALID_TAGS = '''
+    html head title body
+    table tr th td
+    strong b em i p a img ul li br hr
+'''.strip().split()
+VALID_ATTRS = {'a': ['href'], 'img': ['src']}
+
+soup = BeautifulSoup(sys.stdin)
+
+# Bye, bye IE-conditionals!
+for comment in soup.findAll(text=lambda text: isinstance(text, Comment)):
+    comment.extract()
+
+for tag in soup.findAll(True):
+    # Bye, bye craptastic MS Office junk-tags.
+    if tag.name not in VALID_TAGS:
+        tag.hidden = True
+        continue
+
+    # Bye, bye craprastic MS Office junk attributes.
+    tag.attrs = [(attr, value)
+                 for attr, value in tag.attrs
+                 if attr in VALID_ATTRS.get(tag.name, [])]
+
+sys.stdout.write(unicode(soup).encode(soup.originalEncoding))
