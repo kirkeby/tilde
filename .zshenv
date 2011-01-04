@@ -25,5 +25,5 @@ export TEMP=/tmp/$USER
 
 # Source per-platform and per-host configurations.
 for postfix in `uname` `hostname` ; do
-    test -e .zshenv-$postfix && source .zshenv-$postfix
+    test -e ~/.zshenv-$postfix && source ~/.zshenv-$postfix
 done
