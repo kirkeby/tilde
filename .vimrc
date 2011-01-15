@@ -43,6 +43,7 @@ match Evil /\t\|.\{79,\}\|  *$/
 " Various temporary-file syntax rules
 autocmd BufNewFile,BufRead * syntax sync fromstart
 autocmd BufNewFile,BufRead psql.edit.* set syntax=sql
+autocmd BufNewFile,BufRead ~/quotes/* setlocal tw=62
 
 " Load plugins from .vim/bundles/*
 call pathogen#runtime_prepend_subdirectories(expand('~/.vim/bundles'))
