@@ -1,5 +1,7 @@
 # vim: set syntax=sh :
 
+. ~/.zshenv
+
 setxkbmap -option "terminate:ctrl_alt_bksp"
 
 pgrep syndaemon \
