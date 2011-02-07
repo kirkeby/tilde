@@ -4,8 +4,6 @@
 
 setxkbmap -option "terminate:ctrl_alt_bksp"
 
-pgrep syndaemon \
-    || syndaemon -d -t -i 1.0
 pgrep mocp \
     || screen -d -m  -S moc mocp
 
@@ -15,3 +13,6 @@ pgrep mocp \
 pgrep -f dbus_events \
     || { sleep 3 ; \
          ~/opt/python/bin/python ~/opt/dbus-event/dbus_events.py ; } &
+
+pgrep syndaemon \
+    || syndaemon -d -t -i 1.0
