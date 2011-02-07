@@ -5,7 +5,7 @@
 setxkbmap -option "terminate:ctrl_alt_bksp"
 
 pgrep mocp \
-    || screen -d -m  -S moc mocp
+    || screen -d -m -S moc mocp
 
 # We have to wait for our sessions's DBus before starting dbus_events, or
 # nothing will work right, so we sleep three seconds which should more than
