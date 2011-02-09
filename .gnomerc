@@ -4,15 +4,5 @@
 
 setxkbmap -option "terminate:ctrl_alt_bksp"
 
-pgrep mocp \
-    || screen -d -m -S moc mocp
-
-# We have to wait for our sessions's DBus before starting dbus_events, or
-# nothing will work right, so we sleep three seconds which should more than
-# enough.
-pgrep -f dbus_events \
-    || { sleep 3 ; \
-         ~/opt/python/bin/python ~/opt/dbus-event/dbus_events.py ; } &
-
 pgrep syndaemon \
     || syndaemon -d -t -i 1.0

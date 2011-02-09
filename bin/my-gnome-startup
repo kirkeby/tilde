@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
+# with a useless .gnomerc. Why the flying fuck can I only start DBus needful
+# programs via your dumb-ass GUI-configured Startup Programs-crock?!  Won't
+# you all just die horrible deaths. Please?
+
+pgrep -f dbus_events.py || \
+    ~/opt/python/bin/python ~/opt/dbus-event/dbus_events.py
+
+pgrep mocp \
+    || mocp --server
