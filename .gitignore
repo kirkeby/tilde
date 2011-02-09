@@ -45,8 +45,16 @@
 .sudo*
 .thumbnails/
 .xsession-errors*
+.gksu.lock
+.java/
+.macromedia/
+.prism/
+.pwsafe.dat
+.rnd
 Mail/
 Music/
 opt/
 quotes/
 vpn/
+Downloads/
+Pictures/
