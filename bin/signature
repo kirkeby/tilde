@@ -9,6 +9,8 @@ Sune Kirkeby  |
               | 
               | 
               | 
+              | 
+              | 
 '''.split('\n')
 
 os.chdir(os.path.expanduser('~/quotes'))
