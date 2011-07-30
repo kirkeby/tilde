@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+
+'''Script to rename files to match their meta-data.'''
+
+import os
+import sys
+from mutagen.easyid3 import EasyID3
+from mutagen.flac import FLAC
+from mutagen.ogg import OggFileType
+
+readers = {
+    '.mp3': EasyID3,
+    '.flac': FLAC,
+    '.ogg': OggFileType,
+}
+
+actions = []
+for path in sys.argv[1:]:
+    _, type = os.path.splitext(path)
+    if type not in readers:
+        print 'W: Unknown file-type %s' % path
+        continue
+    try:
+        meta = readers[type](path)
+
+        artist = meta['artist'][0].replace(os.path.sep, '_')
+        album = meta['album'][0].replace(os.path.sep, '_')
+        try:
+            track = int(meta['tracknumber'][0])
+        except Exception:
+            track = 0
+        title = meta['title'][0].replace(os.path.sep, '_')
+    except Exception:
+        print 'E: Could not read %s' % path
+        continue
+
+    name = '%02d - %s%s' % (track, title, type)
+    corrected = os.path.join(artist, album, name)
+
+    if corrected <> path:
+        actions.append((path, corrected))
+
+if actions:
+    for action in actions:
+        print 'Will rename %s -> %s' % action
+
+    if raw_input('Ok? ').lower() == 'y':
+        for old, new in actions:
+            if not os.path.exists(os.path.dirname(new)):
+                os.makedirs(os.path.dirname(new))
+            os.rename(old, new)
+
+            if not os.listdir(os.path.dirname(old)):
+                os.rmdir(os.path.dirname(old))
