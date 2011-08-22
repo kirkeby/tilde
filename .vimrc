@@ -60,3 +60,5 @@ let mapleader=","
 nnoremap <Leader>t :NERDTree<cr>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=64
+
+set tags=~/tags
