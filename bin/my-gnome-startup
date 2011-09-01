@@ -10,3 +10,8 @@ pgrep -f dbus_events.py || \
 
 pgrep mocp \
     || mocp --server
+
+# A special place in Hell is reserved for Dropbox, will you just stop eating
+# all my damn CPU and I/O all the time?! Thanks.
+pgrep dropbox \
+    || nice -n 20 ionice -c 3 env -i ~/.dropbox-dist/dropboxd
