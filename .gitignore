@@ -1,5 +1,6 @@
 *~
 .zcompdump
+.zshrc-*
 .zshenv-*
 .ssh/known_hosts
 .viminfo
@@ -86,3 +87,9 @@ Projects/
 Random/
 .vim/bundle/nerdtree/.netrwhist
 .vim/bundle/nerdtree/doc/tags
+public_html
+tags
+.yolk
+.forward
+.awssecret
+.post-review-cookies.txt
