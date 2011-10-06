@@ -24,6 +24,7 @@ set list
 set listchars=tab:▸\ 
 "set listchars+=eol:¬
 "set listchars+=trail:♦
+set tags=~/tags
 
 " Holy fucking christ. Vim must never, ever, ever, *EVER* fucking touch my
 " X clipboard. Vim is *not* a fucking GUI application!
@@ -40,11 +41,16 @@ endtry
 syntax on
 filetype plugin on
 
+" Various keybindings
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 map <F1> <Esc>
 imap <F1> <Esc>
+
+let mapleader=","
+
+noremap <leader><leader> :make<cr>
 
 " Highlight evil hard tabs, trailing white-space and overlong lines
 highlight clear Evil
@@ -60,12 +66,7 @@ autocmd BufNewFile,BufRead *.shpaml setlocal sw=2 sts=2
 autocmd BufNewFile,BufRead *.cs highlight clear Evil
 autocmd BufNewFile,BufRead *.cmd highlight clear Evil
 
-" Bluth.
-let mapleader=","
-
 " NERDTree for browsing
 nnoremap <Leader>t :NERDTree<cr>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=64
-
-set tags=~/tags
