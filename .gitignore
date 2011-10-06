@@ -84,4 +84,5 @@ Dropbox/
 .vagrant/
 Projects/
 Random/
-.vim/bundles/nerdtree/.netrwhist
+.vim/bundle/nerdtree/.netrwhist
+.vim/bundle/nerdtree/doc/tags
