@@ -36,6 +36,9 @@ filetype plugin on
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
+map <F1> <Esc>
+imap <F1> <Esc>
+
 " Highlight evil hard tabs, trailing white-space and overlong lines
 highlight clear Evil
 match Evil /\t\|.\{79,\}\|  *$/
