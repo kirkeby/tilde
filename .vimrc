@@ -30,6 +30,13 @@ set listchars=tab:▸\
 set guioptions=-a
 set clipboard=""
 
+" Try to infect with Pathogen.
+try
+  call pathogen#infect()
+  call pathogen#helptags()
+catch
+endtry
+
 syntax on
 filetype plugin on
 
@@ -52,9 +59,6 @@ autocmd BufNewFile,BufRead ~/quotes/* setlocal tw=60
 autocmd BufNewFile,BufRead *.shpaml setlocal sw=2 sts=2
 autocmd BufNewFile,BufRead *.cs highlight clear Evil
 autocmd BufNewFile,BufRead *.cmd highlight clear Evil
-
-" Load plugins from .vim/bundles/*
-call pathogen#runtime_prepend_subdirectories(expand('~/.vim/bundles'))
 
 " Bluth.
 let mapleader=","
