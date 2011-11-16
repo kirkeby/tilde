@@ -1,5 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
+	pager = less --raw
 [color]
     ui = auto
 [alias]
@@ -9,13 +10,14 @@
     stat = status
     cp = cherry-pick
     up = svn rebase
-[push]
-    default = matching
 [user]
     name = Sune Kirkeby
     email = mig@ibofobi.dk
     excludesfile = ~/.gitignore
 [push]
-    default = matching
+	default = current
 [pull]
-    default = matching
+	default = current
+[merge]
+    ff = false
+    

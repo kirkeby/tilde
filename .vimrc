@@ -67,6 +67,7 @@ autocmd BufNewFile,BufRead *.shpaml highlight clear Evil
 autocmd BufNewFile,BufRead *.html highlight clear Evil
 autocmd BufNewFile,BufRead *.cs highlight clear Evil
 autocmd BufNewFile,BufRead *.cmd highlight clear Evil
+autocmd BufNewFile,BufRead COMMIT_EDITMSG set tw=68
 
 " NERDTree for browsing
 nnoremap <Leader>t :NERDTree<cr>
