@@ -18,7 +18,7 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 export LANG=en_US.UTF-8
-export GREP_OPTIONS='--color=auto'
+export GREP_OPTIONS='--exclude=*~ --color=auto'
 
 test -d /tmp/$USER || mkdir -p /tmp/$USER
 export TEMP=/tmp/$USER
