@@ -5,6 +5,8 @@ export PS1='%n@%m:%~$ '
 HISTSIZE=200
 SAVEHIST=200
 HISTFILE=~/.zsh_history
+# Incremental history, instead of last-to-write-wins history.
+setopt inc_append_history
 
 # Automatic pushd on cd.
 DIRSTACKSIZE=8
