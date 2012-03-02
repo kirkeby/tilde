@@ -19,5 +19,9 @@ do
     test -e ~/$name || mv $name ~/$name
 done
 
+# Remove empty directories.
+cd ~
+find $OLDPWD -type d | sort -r | xargs rmdir 2>/dev/null
+
 # Optionally configure git.
 test -e ~/.gitconfig || ./bin/configure-git
