@@ -14,6 +14,9 @@ if [ -d ~/opt ] ; then
     #done
 fi
 
+test -d $HOME/.rvm/bin && PATH=$PATH:$HOME/.rvm/bin
+export PATH
+
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
