@@ -1,6 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
-	pager = less --raw
+    pager = less --raw
 [color]
     ui = auto
 [alias]
@@ -15,9 +15,8 @@
     email = mig@ibofobi.dk
     excludesfile = ~/.gitignore
 [push]
-	default = current
+    default = current
 [pull]
-	default = current
+    default = current
 [merge]
     ff = false
-    
