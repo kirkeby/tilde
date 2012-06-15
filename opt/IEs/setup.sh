@@ -12,16 +12,16 @@ do
     archive="Windows_7_${vm}.part01.exe"
 
     case ${version} in
-        8) vhd="Windows 7.vhd" ;;
-        9) vhd="Win7_IE8.vhd" ;;
+        8) vhd="Win7_IE8.vhd" ;;
+        9) vhd="Windows 7.vhd" ;;
         *)
             echo "Unknown IE version: ${version}"
             exit 1
             ;;
     esac
 
-    mkdir -p "${vm_path}/${vhd}"
-    cd "${vm_path}/${vhd}"
+    mkdir -p "${vm_path}/"
+    cd "${vm_path}/"
     unrar e "${OLDPWD}/${archive}"
 
     VBoxManage createvm --name "${vm}" --ostype "${vm_type}" --register
