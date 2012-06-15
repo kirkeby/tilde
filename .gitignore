@@ -105,3 +105,5 @@ VirtualBox VMs/
 doptio/
 .Xauthority
 .frippery_rows
+# netrc is used by the heroku CLI.
+.netrc
