@@ -38,7 +38,13 @@ try
 catch
 endtry
 
-syntax on
+syntax enable
+set background=dark
+set t_Co=16
+let g:solarized_termcolors = 16
+let g:solarized_termtrans = 1
+colorscheme solarized
+
 filetype plugin on
 
 " Various keybindings
