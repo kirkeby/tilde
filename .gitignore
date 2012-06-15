@@ -93,3 +93,15 @@ tags
 .awssecret
 .post-review-cookies.txt
 .rvm
+.Skype/
+.icedtea/
+.linuxmint/
+.mono/
+.vim/.netrwhist
+Documents
+Music
+Private/
+VirtualBox VMs/
+doptio/
+.Xauthority
+.frippery_rows
