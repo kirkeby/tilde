@@ -18,3 +18,5 @@ xrandr --output VGA1 --primary
 pgrep dropbox \
     || nohup nice -n 20 ionice -c 3 \
        env -i ~/.dropbox-dist/dropboxd > /dev/null &
+
+pgrep ccxstream || ~/opt/ccxstream/bin/start
