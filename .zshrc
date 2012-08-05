@@ -60,6 +60,9 @@ _ssh_hosts () {
   fi
 }
 
+# If RVM is installed source it.
+[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
+
 # Source per-platform and per-host configurations.
 for postfix in `uname` `hostname` ; do
     test -e ~/.zshrc-$postfix && source ~/.zshrc-$postfix
