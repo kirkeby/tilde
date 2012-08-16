@@ -1,1 +1,1 @@
-alias ls='ls --color=auto -BFG -I "*~" -I "*.pyc"'
+alias ls='ls --color=auto -BF -I "*~" -I "*.pyc"'
