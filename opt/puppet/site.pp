@@ -4,4 +4,5 @@ Exec {
 
 node skitop {
     include common
+    include dnsmasq
 }
