@@ -2,6 +2,8 @@
 
 set -e
 
+cd `dirname $0`
+
 test -x /usr/bin/puppet || sudo apt-get install --yes puppet
 
 sudo puppet apply --verbose --no-listen --modulepath=$PWD/modules $PWD/site.pp
