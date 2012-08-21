@@ -107,3 +107,6 @@ doptio/
 .frippery_rows
 # netrc is used by the heroku CLI.
 .netrc
+.libreoffice/
+.pythonhist
+.recently-used
