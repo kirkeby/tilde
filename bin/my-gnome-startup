@@ -7,8 +7,8 @@ xrandr --output VGA1 --primary
 # programs via your dumb-ass GUI-configured Startup Programs-crock?!  Won't
 # you all just die horrible deaths. Please?
 
-#pgrep -f dbus_events.py || \
-#    ~/opt/python/bin/python ~/opt/dbus-event/dbus_events.py
+pgrep -f dbus_events.py || \
+    ~/opt/python/bin/python ~/opt/dbus-event/dbus_events.py
 
 #pgrep mocp \
 #    || mocp --server
