@@ -20,3 +20,5 @@ pgrep dropbox \
        env -i ~/.dropbox-dist/dropboxd > /dev/null &
 
 pgrep ccxstream || ~/opt/ccxstream/bin/start
+
+pgrep skype || skype &
