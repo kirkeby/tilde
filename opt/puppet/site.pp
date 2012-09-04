@@ -5,4 +5,5 @@ Exec {
 node skitop, sune-laptop {
     include common
     include dnsmasq
+    include spotify
 }

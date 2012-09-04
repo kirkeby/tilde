@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/vim-repeat"]
 	path = .vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "opt/puppet/modules/apt"]
+	path = opt/puppet/modules/apt
+	url = https://github.com/evolvingweb/puppet-apt
