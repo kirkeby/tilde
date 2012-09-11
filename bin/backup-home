@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# To create a compressed, encrypted backup:
+#   backup-home | gzip -9 | openssl aes-256-cbc -salt > backup.tgz.enc
+# To decompress the file use `openssl aes-256-cbc -d`.
+
+cd ~
+exec tar -c \
+    --exclude VirtualBox\ VMs --exclude Dropbox --exclude opt \
+    --exclude Downloads --exclude .rvm --exclude .cache \
+    --exclude .dropbox --exclude .thumbnails --exclude \
+    .adobe --exclude .mozilla \
+    .
