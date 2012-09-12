@@ -2,7 +2,7 @@ Exec {
     path => ['/bin', '/sbin', '/usr/bin', '/usr/sbin']
 }
 
-node skitop, sune-laptop {
+node skitop, slappy {
     include common
     include dnsmasq
     include spotify
