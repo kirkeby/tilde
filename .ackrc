@@ -1,3 +1,4 @@
+--ignore-dir=venv
 --ignore-dir=vendor
 --ignore-dir=build
 --ignore-dir=dist
