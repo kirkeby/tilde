@@ -2,6 +2,8 @@
 
 xrandr --output VGA1 --primary
 
+pgrep redshift || redshift -v &
+
 # Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
 # with a useless .gnomerc. Why the flying fuck can I only start DBus needful
 # programs via your dumb-ass GUI-configured Startup Programs-crock?!  Won't
