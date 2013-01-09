@@ -18,5 +18,3 @@
     default = current
 [pull]
     default = current
-[merge]
-    ff = false
