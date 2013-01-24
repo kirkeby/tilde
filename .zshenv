@@ -16,7 +16,10 @@ fi
 
 test -d $HOME/opt/python && export PYTHONHOME=$HOME/opt/python
 
-test -d $HOME/.rvm/bin && PATH=$PATH:$HOME/.rvm/bin
+# Without PYTHONPATH vim-jedi can't load jedi.
+test -d $HOME/opt/python/lib/python2.7/site-packages \
+    && export PYTHONPATH=$HOME/opt/python/lib/python2.7/site-packages
+
 export PATH
 
 export EDITOR=vim
