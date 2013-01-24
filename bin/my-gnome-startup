@@ -15,9 +15,6 @@ pgrep -f redshift || redshift &
 pgrep -f dbus_events.py || \
     ~/opt/python/bin/python ~/opt/dbus-event/dbus_events.py
 
-#pgrep mocp \
-#    || mocp --server
-
 # A special place in Hell is reserved for Dropbox, will you just stop eating
 # all my damn CPU and I/O all the time?! Thanks.
 pgrep dropbox \
