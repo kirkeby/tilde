@@ -2,7 +2,7 @@
 
 xrandr --output VGA1 --primary
 
-pgrep redshift || redshift -v &
+pgrep -f redshift || redshift &
 
 # Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
 # with a useless .gnomerc. Why the flying fuck can I only start DBus needful
