@@ -3,6 +3,8 @@
 vga=`xrandr | grep 'VGA. connected' | awk '{ print $1 }'`
 xrandr --output $vga --primary
 
+[ -x /usr/bin/numlockx ] && numlockx off
+
 pgrep -f redshift || redshift &
 
 # Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
