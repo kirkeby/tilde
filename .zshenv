@@ -20,6 +20,8 @@ test -d $HOME/opt/python && export PYTHONHOME=$HOME/opt/python
 test -d $HOME/opt/python/lib/python2.7/site-packages \
     && export PYTHONPATH=$HOME/opt/python/lib/python2.7/site-packages
 
+which rbenv > /dev/null && eval "$(rbenv init -)"
+
 export PATH
 
 export EDITOR=vim
