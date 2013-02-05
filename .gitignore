@@ -110,3 +110,9 @@ doptio/
 .libreoffice/
 .pythonhist
 .recently-used
+.cabal/
+.ghc/
+.heroku/
+.mateconf/
+.mateconfd/
+.rbenv/
