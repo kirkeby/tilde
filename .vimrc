@@ -72,10 +72,5 @@ autocmd BufNewFile,BufRead *.cs highlight clear Evil
 autocmd BufNewFile,BufRead *.cmd highlight clear Evil
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set tw=68
 
-" NERDTree for browsing
-nnoremap <Leader>t :NERDTree<cr>
-let NERDTreeQuitOnOpen=1
-let NERDTreeWinSize=64
-
 " CtrlP ignores
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist)$'
