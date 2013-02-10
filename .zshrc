@@ -60,6 +60,18 @@ _ssh_hosts () {
   fi
 }
 
+# Per-project-directory configurations
+export PROJECT_ROOTS="$HOME/doptio/unicorn $HOME/unixy"
+if [[ -d $HOME/Projects ]] ; then
+    export PROJECT_ROOTS="$PROJECT_ROOTS `echo $HOME/Projects/*`"
+fi
+
+function chpwd() {
+    for dir in `echo $PROJECT_ROOTS` ; do
+        [[ $dir == $PWD ]] && [[ -f $PWD/.zshrc ]] && source $PWD/.zshrc
+    done
+}
+
 # Source per-platform and per-host configurations.
 for postfix in `uname` `hostname` ; do
     test -e ~/.zshrc-$postfix && source ~/.zshrc-$postfix
