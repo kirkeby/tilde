@@ -64,7 +64,3 @@ _ssh_hosts () {
 for postfix in `uname` `hostname` ; do
     test -e ~/.zshrc-$postfix && source ~/.zshrc-$postfix
 done
-
-# Source per-directory configurations (i.e. for per-project screens).
-test $PWD != $HOME && test -e .zshrc && source .zshrc
-test -f py/bin/activate && source py/bin/activate
