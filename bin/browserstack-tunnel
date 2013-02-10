@@ -1,0 +1,2 @@
+#!/bin/sh
+exec java -jar `dirname $0`/BrowserStackTunnel.jar $BROWSERSTACK_KEY localhost,5000,0
