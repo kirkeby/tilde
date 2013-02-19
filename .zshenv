@@ -8,10 +8,6 @@ if [ -d ~/opt ] ; then
     do
         export PATH=${x}:$PATH
     done
-    #for x in ~/opt/*/share/man
-    #do
-    #    export MANPATH=${x}:$MANPATH
-    #done
 fi
 
 test -d $HOME/opt/python && export PYTHONHOME=$HOME/opt/python
