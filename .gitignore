@@ -117,3 +117,7 @@ doptio/
 .mateconf/
 .mateconfd/
 .rbenv/
+# Work stuff
+mine.ini
+unixy/
+skynet.yaml
