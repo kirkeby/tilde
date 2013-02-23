@@ -74,3 +74,5 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG set tw=68
 
 " CtrlP ignores
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist)$'
+
+let g:syntastic_check_on_open = 1
