@@ -17,6 +17,7 @@ set wildignore=*.swp,*.pyc,*.class,*.o,*~
 set ttyfast
 set hlsearch
 set incsearch
+set viminfo='1000,f1,<50,s10,h,%
 
 " When formatting text, recognize numbered lists.
 set formatoptions+=n
