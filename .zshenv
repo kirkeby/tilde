@@ -27,6 +27,12 @@ export GREP_OPTIONS='--exclude=*~ --color=auto'
 test -d /tmp/$USER || mkdir -p /tmp/$USER
 export TEMP=/tmp/$USER
 
+# I really, really *really* should not have to muck about with TERM, but
+# gnome-terminal won't set it to what I want, so here I go :/
+if [[ -n "$DISPLAY" && "$TERM" = "xterm" ]] ; then
+    export TERM=xterm-256color
+fi
+
 # Source per-platform and per-host configurations.
 for postfix in `uname` `hostname` ; do
     test -e ~/.zshenv-$postfix && source ~/.zshenv-$postfix
