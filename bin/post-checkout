@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+cd `dirname $0`/..
+
+ln -sf ../../bin/post-checkout .git/hooks/post-checkout
+
+git submodule update --init
+git submodule foreach --recursive 'git submodule update --init'

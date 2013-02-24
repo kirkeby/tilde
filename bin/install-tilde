@@ -25,3 +25,6 @@ find $OLDPWD -type d | sort -r | xargs rmdir 2>/dev/null
 
 # Optionally configure git.
 test -e ~/.gitconfig || ./bin/configure-git
+
+# Checkout submodules.
+~/bin/post-checkout
