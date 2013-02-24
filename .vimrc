@@ -15,6 +15,8 @@ set showcmd
 set laststatus=2
 set wildignore=*.swp,*.pyc,*.class,*.o,*~
 set ttyfast
+set hlsearch
+set incsearch
 
 " When formatting text, recognize numbered lists.
 set formatoptions+=n
