@@ -82,3 +82,5 @@ let g:syntastic_python_checkers=['pyflakes', 'pep8']
 
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_function_definition = 0
+
+autocmd BufNewFile,BufRead *.py source ~/.vim/pep8.vim
