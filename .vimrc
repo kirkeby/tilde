@@ -56,6 +56,7 @@ imap <F1> <Esc>
 let mapleader=","
 
 noremap <leader><leader> :make<cr>
+noremap <leader>. :lnext<cr>
 
 " Highlight evil hard tabs, trailing white-space and overlong lines
 highlight clear Evil
