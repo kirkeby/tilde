@@ -2,7 +2,7 @@
 
 set -e
 
-cd `dirname $0`/..
+cd $HOME
 
 ln -sf ../../bin/post-checkout .git/hooks/post-checkout
 
