@@ -15,7 +15,6 @@ set showcmd
 set laststatus=2
 set wildignore=*.swp,*.pyc,*.class,*.o,*~
 set ttyfast
-set hlsearch
 set incsearch
 set viminfo='1000,f1,<50,s10,h,%
 
