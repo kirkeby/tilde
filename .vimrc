@@ -79,7 +79,7 @@ let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist)
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_python_checkers=['pyflakes', 'pep8']
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_function_definition = 0
