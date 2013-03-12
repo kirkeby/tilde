@@ -6,11 +6,7 @@ export PATH=$HOME/bin:$PATH
 if [ -d ~/opt ] ; then
     for bin in `ls -dr ~/opt/*/bin`
     do
-        if [[ -f ${bin}/activate ]] ; then
-            VIRTUAL_ENV_DISABLE_PROMPT=y source ${bin}/activate
-        else
-            export PATH=${bin}:$PATH
-        fi
+        export PATH=${bin}:$PATH
     done
 fi
 
