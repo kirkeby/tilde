@@ -3,7 +3,7 @@ class common {
     package { ['zsh', 'git', 'build-essential', 'python2.7', 'python2.7-dev',
                'libxml2-dev', 'libxslt1-dev', 'python-virtualenv',
                'screen', 'vim']:
-        ensure => installed
+        ensure => latest,
     }
 
     ### Unattended Upgrades are a great idea!
