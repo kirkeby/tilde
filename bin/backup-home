@@ -5,9 +5,19 @@
 # To decompress the file use `openssl aes-256-cbc -d`.
 
 cd ~
-exec tar -c \
-    --exclude VirtualBox\ VMs --exclude Dropbox --exclude opt \
-    --exclude Downloads --exclude .rvm --exclude .cache \
-    --exclude .dropbox --exclude .thumbnails --exclude \
-    .adobe --exclude .mozilla \
+exec tar -czv \
+    --exclude VirtualBox\ VMs \
+    --exclude Dropbox \
+    --exclude Downloads \
+    --exclude opt \
+    --exclude .rvm \
+    --exclude .rbenv \
+    --exclude .cache \
+    --exclude .dropbox \
+    --exclude .dropbox-dist \
+    --exclude .thumbnails \
+    --exclude .adobe \
+    --exclude .mozilla \
+    --exclude .vagrant.d \
+    --exclude .ssh \
     .
