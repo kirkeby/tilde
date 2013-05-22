@@ -1,18 +1,12 @@
 [submodule "opt/puppet/modules/apt"]
 	path = opt/puppet/modules/apt
 	url = https://github.com/evolvingweb/puppet-apt
-[submodule ".vim/bundle/vim-jedi"]
-	path = .vim/bundle/vim-jedi
-	url = https://github.com/davidhalter/jedi-vim
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
 [submodule ".vim/bundle/ack"]
 	path = .vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive
