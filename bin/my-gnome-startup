@@ -1,24 +1,22 @@
 #!/bin/sh
 
+# Make sure any external monitor is primary.
 external_monitor=`xrandr | grep ' connected' | grep -v LVDS | cut -f 1 -d ' '`
 xrandr --output $external_monitor --primary
 
+# Fuck off, Numlock-overlay-keys.
 [ -x /usr/bin/numlockx ] && numlockx off
 
+# Yeah!
 pgrep -f redshift || redshift &
 
 # Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
 # with a useless .gnomerc. Why the flying fuck can I only start DBus needful
 # programs via your dumb-ass GUI-configured Startup Programs-crock?!  Won't
 # you all just die horrible deaths. Please?
-
 pgrep -f dbus_events.py || \
     ~/opt/python/bin/python ~/opt/dbus-event/dbus_events.py
 
 # A special place in Hell is reserved for Dropbox, will you just stop eating
 # all my damn CPU and I/O all the time?! Thanks.
-pgrep dropbox \
-    || nohup nice -n 20 ionice -c 3 \
-       env -i ~/.dropbox-dist/dropboxd > /dev/null &
-
-pgrep ccxstream || ~/opt/ccxstream/bin/start
+pgrep -f dropbox || nice -n 20 ionice -c 3 dropbox start
