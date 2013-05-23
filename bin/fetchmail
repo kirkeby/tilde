@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+dotlockfile -pl -r 0 "$0.lock"
+trap 'rm -f "$0.lock"' 0
+ping -q -c 1 josefine.csis.local
+yes yes | mbsync -a
