@@ -115,6 +115,7 @@ doptio/
 .recently-used
 .cabal/
 .ghc/
+.steam*
 .heroku/
 .mateconf/
 .mateconfd/
