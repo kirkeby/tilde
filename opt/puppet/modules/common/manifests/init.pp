@@ -4,7 +4,8 @@ class common {
                'libxml2-dev', 'libxslt1-dev', 'libreadline-dev',
                'libncurses-dev',
                'python-virtualenv', 'screen', 'vim',
-               'redshift', 'numlockx']:
+               'redshift', 'numlockx',
+               'apt-file',]:
         ensure => latest,
     }
 
