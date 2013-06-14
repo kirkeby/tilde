@@ -5,7 +5,8 @@ class common {
                'libncurses-dev',
                'python-virtualenv', 'screen', 'vim',
                'redshift', 'numlockx',
-               'apt-file',]:
+               'apt-file',
+               'libdata-ical-perl', 'libtext-autoformat-perl']:
         ensure => latest,
     }
 
