@@ -7,7 +7,8 @@ class common {
                'redshift', 'numlockx',
                'apt-file',
                'libdata-ical-perl', 'libtext-autoformat-perl',
-               'html2text']:
+               'html2text',
+               'libnss3-tools']:
         ensure => latest,
     }
 
