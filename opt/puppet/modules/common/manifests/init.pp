@@ -6,7 +6,8 @@ class common {
                'python-virtualenv', 'screen', 'vim',
                'redshift', 'numlockx',
                'apt-file',
-               'libdata-ical-perl', 'libtext-autoformat-perl']:
+               'libdata-ical-perl', 'libtext-autoformat-perl',
+               'html2text']:
         ensure => latest,
     }
 
