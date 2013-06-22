@@ -1,4 +1,8 @@
 class common {
+    File {
+        owner => root, group => root, mode => 0644,
+    }
+
     ### Packages I use everywhere I go.
     package { ['zsh', 'git', 'build-essential', 'python2.7', 'python2.7-dev',
                'libxml2-dev', 'libxslt1-dev', 'libreadline-dev',
@@ -16,11 +20,9 @@ class common {
     package { 'unattended-upgrades': ensure => installed }
     file { '/etc/apt/apt.conf.d/20auto-upgrades':
         source => 'puppet:///modules/common/20auto-upgrades',
-        owner => 'root', group => 'root', mode => 0644
     }
     file { '/etc/apt/apt.conf.d/50unattended-upgrades':
         source => 'puppet:///modules/common/50unattended-upgrades',
-        owner => 'root', group => 'root', mode => 0644
     }
 
     ### Ubuntu's mucking around with sitecustomize can go fuck itself,
