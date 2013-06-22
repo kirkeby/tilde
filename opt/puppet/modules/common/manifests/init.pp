@@ -6,7 +6,7 @@ class common {
     ### Packages I use everywhere I go.
     package { ['zsh', 'git', 'build-essential', 'python2.7', 'python2.7-dev',
                'libxml2-dev', 'libxslt1-dev', 'libreadline-dev',
-               'libncurses-dev',
+               'libncurses5-dev',
                'python-virtualenv', 'screen', 'vim',
                'redshift', 'numlockx',
                'apt-file',
