@@ -27,10 +27,14 @@ class common {
 
     ### Ubuntu's mucking around with sitecustomize can go fuck itself,
     ### sitecustomize is, has always been and will always be for end-users.
-    file { ['/usr/lib/python2.7/sitecustomize.py',
-            '/usr/lib/python2.7/sitecustomize.pyc',
-            '/usr/lib/python2.7/sitecustomize.pyo']:
-        ensure => removed,
+    $sitecustomize = '/usr/lib/python2.7/sitecustomize.py'
+    exec { 'unbreak-python2.7-sitecustomize':
+        command => "dpkg-divert --add --local --rename $sitecustomize",
+        onlyif => "test -e $sitecustomize",
+    }
+    Package["python2.7"] ~> Exec["unbreak-python2.7-sitecustomize"]
+    file { ["${sitecustomize}c", "${sitecustomize}o"]:
+        ensure => absent,
     }
 
     ### Avahi can bite my shiny metal ass!
