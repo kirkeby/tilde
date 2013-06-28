@@ -12,7 +12,11 @@ class common {
                'apt-file',
                'libdata-ical-perl', 'libtext-autoformat-perl',
                'html2text',
-               'libnss3-tools']:
+               'libnss3-tools',
+               'haskell-platform',
+               'haskell-platform-doc',
+               'haskell-platform-prof',
+               ]:
         ensure => latest,
     }
 
