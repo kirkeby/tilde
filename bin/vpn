@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+action=$1
+pattern=$2
+
+conn=`nmcli --terse --fields uuid,type,name con list \
+      | grep "${pattern}" \
+      | grep -F :vpn: \
+      | head -1`
+uuid=`echo "${conn}" | cut -f 1 -d :`
+name=`echo "${conn}" | cut -f 3 -d :`
+
+if [ -z "${uuid}" ] ; then
+    echo "No VPN connection found." 1>&2
+    exit 1
+fi
+
+echo "Found VPN connection: ${name}"
+
+nmcli con ${action} uuid ${uuid}
