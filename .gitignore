@@ -70,7 +70,7 @@ Dropbox/
 .evolution/
 .gegl-0.0/
 .gem/
-.gimp-2.6/
+.gimp-*/
 .kodos/
 .minecraft/
 .mission-control/
@@ -123,4 +123,9 @@ doptio/
 # Work stuff
 mine.ini
 unixy/
+proccer/
 skynet.yaml
+tilde.html
+Desktop/
+bin/fetchmail.lock
+opt/FrozenSynapse/
