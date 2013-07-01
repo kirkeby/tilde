@@ -16,6 +16,8 @@ class common {
                'haskell-platform',
                'haskell-platform-doc',
                'haskell-platform-prof',
+               'network-manager-openvpn',
+               'network-manager-openvpn-gnome',
                ]:
         ensure => latest,
     }
