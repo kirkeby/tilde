@@ -6,7 +6,8 @@ action=$1
 pattern=$2
 
 conn=`nmcli --terse --fields uuid,type,name con list \
-      | grep "${pattern}" \
+      | sort --ignore-case --key 3 --field-separator : \
+      | grep -i "${pattern}" \
       | grep -F :vpn: \
       | head -1`
 uuid=`echo "${conn}" | cut -f 1 -d :`
