@@ -10,6 +10,8 @@ if [ -d ~/opt ] ; then
     done
 fi
 
+test -d $HOME/.cabal/bin && export PATH=$PATH:$HOME/.cabal/bin
+
 which rbenv > /dev/null && eval "$(rbenv init -)"
 
 export PATH
