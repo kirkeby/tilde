@@ -19,6 +19,7 @@ export PATH
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
+export LESS='--RAW-CONTROL-CHARS --chop-long-lines --quit-if-one-screen --ignore-case'
 export LANG=en_US.UTF-8
 export GREP_OPTIONS='--exclude=*~ --color=auto'
 
