@@ -12,6 +12,7 @@ class common {
                'libdata-ical-perl', 'libtext-autoformat-perl',
                'html2text',
                'libnss3-tools',
+               'openjdk-7-jdk',
                ]:
         ensure => latest,
     }
