@@ -2,7 +2,6 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # Add private bin's to head of PATH
-export PATH=$HOME/bin:$PATH
 if [ -d ~/opt ] ; then
     for bin in `ls -dr ~/opt/*/bin`
     do
