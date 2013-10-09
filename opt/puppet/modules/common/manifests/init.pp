@@ -8,16 +8,10 @@ class common {
                'libxml2-dev', 'libxslt1-dev', 'libreadline-dev',
                'libncurses5-dev',
                'python-virtualenv', 'screen', 'vim',
-               'redshift', 'numlockx',
                'apt-file',
                'libdata-ical-perl', 'libtext-autoformat-perl',
                'html2text',
                'libnss3-tools',
-               'haskell-platform',
-               'haskell-platform-doc',
-               'haskell-platform-prof',
-               'network-manager-openvpn',
-               'network-manager-openvpn-gnome',
                ]:
         ensure => latest,
     }
@@ -41,15 +35,5 @@ class common {
     Package["python2.7"] ~> Exec["unbreak-python2.7-sitecustomize"]
     file { ["${sitecustomize}c", "${sitecustomize}o"]:
         ensure => absent,
-    }
-
-    ### Avahi can bite my shiny metal ass!
-    exec { "disable-avahi-daemon":
-        command => "dpkg-divert --add --local --rename /usr/sbin/avahi-daemon",
-        onlyif => "test -f /usr/sbin/avahi-daemon"
-    }
-    exec { "kill-avahi-daemon":
-        command => "pkill -9 avahi",
-        onlyif => "pgrep avahi"
     }
 }
