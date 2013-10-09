@@ -26,15 +26,14 @@ class common {
         source => 'puppet:///modules/common/50unattended-upgrades',
     }
 
-    ### Ubuntu's mucking around with sitecustomize can go fuck itself,
-    ### sitecustomize is, has always been and will always be for end-users.
+    ### Fucking morons mucking around with sitecustomize.py. Eat a bucket of
+    ### cocks, please?
     $sitecustomize = '/usr/lib/python2.7/sitecustomize.py'
-    exec { 'unbreak-python2.7-sitecustomize':
-        command => "dpkg-divert --add --local --rename $sitecustomize",
-        onlyif => "test -e $sitecustomize",
+    exec { 'undivert-python2.7-sitecustomize':
+        command => "dpkg-divert --remove --local --rename $sitecustomize",
+        onlyif => "test -e $sitecustomize.distrib",
     }
-    Package["python2.7"] ~> Exec["unbreak-python2.7-sitecustomize"]
-    file { ["${sitecustomize}c", "${sitecustomize}o"]:
-        ensure => absent,
+    file { "/etc/python2.7/sitecustomize.py":
+        source => 'puppet:///modules/common/sitecustomize.py',
     }
 }
