@@ -8,3 +8,7 @@ node skitop, slappy {
     include dnsmasq
     include spotify
 }
+
+node ibofobot {
+    include common
+}
