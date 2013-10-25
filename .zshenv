@@ -1,5 +1,6 @@
 # Reset PATH to a sensible default
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=$HOME/bin:$PATH
 
 # Add private bin's to head of PATH
 if [ -d ~/opt ] ; then
