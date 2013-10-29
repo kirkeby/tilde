@@ -26,6 +26,8 @@ export GREP_OPTIONS='--exclude=*~ --color=auto'
 test -d /tmp/$USER || mkdir -p /tmp/$USER
 export TEMP=/tmp/$USER
 
+export _JAVA_OPTIONS="-Djava.net.preferIPv4Stack=true"
+
 # I really, really *really* should not have to muck about with TERM, but
 # gnome-terminal won't set it to what I want, so here I go :/
 if [[ -n "$DISPLAY" && "$TERM" = "xterm" ]] ; then
