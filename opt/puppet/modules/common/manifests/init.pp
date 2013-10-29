@@ -10,7 +10,7 @@ class common {
                'python-virtualenv', 'screen', 'vim',
                'apt-file',
                'libdata-ical-perl', 'libtext-autoformat-perl',
-               'html2text',
+               'html2text', 'dos2unix',
                'libnss3-tools',
                # A Java development environment
                'openjdk-7-jdk', 'junit4', 'ant',
