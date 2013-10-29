@@ -4,7 +4,6 @@ Exec {
 
 node skitop, slappy {
     include common
-    include desktop
     include dnsmasq
     include spotify
 }
