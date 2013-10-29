@@ -12,7 +12,8 @@ class common {
                'libdata-ical-perl', 'libtext-autoformat-perl',
                'html2text',
                'libnss3-tools',
-               'openjdk-7-jdk',
+               # A Java development environment
+               'openjdk-7-jdk', 'junit4', 'ant',
                ]:
         ensure => latest,
     }
