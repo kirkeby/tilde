@@ -12,7 +12,8 @@ class common {
                'libdata-ical-perl', 'libtext-autoformat-perl',
                'html2text', 'dos2unix',
                'libnss3-tools',
-               'realpath', 'mutt', 'isync',
+               'realpath', 'mutt', 'isync', 'pidgin-sipe',
+               'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
                # A Java development environment
                'openjdk-7-jdk', 'junit4', 'ant',
                ]:
