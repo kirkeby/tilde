@@ -31,6 +31,8 @@ export _JAVA_OPTIONS="-Djava.net.preferIPv4Stack=true"
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
+test -x $HOME/opt/go/bin/go && export GOROOT=$HOME/opt/go
+
 # I really, really *really* should not have to muck about with TERM, but
 # gnome-terminal won't set it to what I want, so here I go :/
 if [[ -n "$DISPLAY" && "$TERM" = "xterm" ]] ; then
