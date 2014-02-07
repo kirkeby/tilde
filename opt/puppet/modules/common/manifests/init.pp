@@ -14,6 +14,7 @@ class common {
                'libnss3-tools',
                'realpath', 'mutt', 'isync', 'pidgin-sipe',
                'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
+               'libssl-dev',
                # A Java development environment
                'openjdk-7-jdk', 'junit4', 'ant',
                ]:
