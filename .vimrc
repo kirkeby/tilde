@@ -73,7 +73,11 @@ autocmd BufNewFile,BufRead *.html highlight clear Evil
 autocmd BufNewFile,BufRead *.cs highlight clear Evil
 autocmd BufNewFile,BufRead *.cmd highlight clear Evil
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set tw=68
+
 autocmd FileType go compiler go
+" *shudder*
+autocmd FileType go setlocal noexpandtab shiftwidth=8 tabstop=8 softtabstop=8 nolist
+autocmd BufNewFile,BufRead *.go highlight clear Evil
 
 " CtrlP ignores
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist)$'
