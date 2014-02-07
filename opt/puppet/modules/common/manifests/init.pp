@@ -15,6 +15,7 @@ class common {
                'realpath', 'mutt', 'isync', 'pidgin-sipe',
                'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
                'libssl-dev',
+               'elinks',
                # A Java development environment
                'openjdk-7-jdk', 'junit4', 'ant',
                ]:
