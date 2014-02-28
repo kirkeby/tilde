@@ -52,6 +52,8 @@ inoremap <F12> <C-o>:syntax sync fromstart<CR>
 map <F1> <Esc>
 imap <F1> <Esc>
 
+map <F5> :make<CR>
+
 let mapleader=","
 
 noremap <leader><leader> :make<cr>
@@ -76,8 +78,8 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG set tw=68
 
 autocmd FileType go compiler go
 " *shudder*
-autocmd FileType go setlocal noexpandtab shiftwidth=8 tabstop=8 softtabstop=8 nolist
+autocmd FileType go setlocal noexpandtab shiftwidth=8 tabstop=8 softtabstop=8 nolist tw=0 autoindent smartindent makeprg=make
 autocmd BufNewFile,BufRead *.go highlight clear Evil
 
 " CtrlP ignores
-let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist)$'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist|github.com)$'
