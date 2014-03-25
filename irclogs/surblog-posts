@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import os
+import re
+from time import strftime
+
+irclogs = '/home/sune/irclogs/Cafeen/#cafeen/'
+irclog = irclogs + strftime('%Y%m%d')
+post_root = '/home/sune/flexo/state/surblog/'
+topic_re = re.compile(r'^..:.. -!- \w+ changed the topic of #cafeen to: (.*)',
+                      re.M)
+
+posts = dict((open(os.path.join(post_root, filename)).read().strip(), True)
+             for filename in os.listdir(post_root))
+topics = [m
+          for m in topic_re.findall(open(irclog).read())
+          if m not in posts]
+
+alphanum_re = re.compile('[^a-z0-9-]')
+def slug(post):
+    return alphanum_re.sub('', post.lower().replace(' ', '-'))
+
+for topic in topics:
+    path = post_root + slug(topic) + '.txt'
+    if os.path.exists(path):
+        continue
+    open(path, 'w').write(topic + '\n')

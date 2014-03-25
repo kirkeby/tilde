@@ -1,0 +1,19 @@
+#!/bin/sh
+cd ~/irclogs/Cafeen/\#cafeen/
+cat <<EOF
+<?xml version="1.0"?>
+<!-- name="generator" content="link-log-rss.sh/0.0.0.0.0.0.0.1" -->
+<rss version="0.91">
+  <channel>
+    <title>#cafeen link-log</title>
+    <link>http://hasselbalch.com/irc-urllist.html</link>
+    <description>#cafeen links</description>
+    <language>da</language>
+EOF
+egrep 'https?://' `ls -rt|tail -3` \
+| egrep -v '^[0-9:]+ -!- ' \
+| sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' \
+      -e 's,^\(.*\(https\?://[^ ]*\).*\)$,<item><title>\2</title><link>\2</link><description>\1</description></item>,'
+cat <<EOF
+</channel></rss>
+EOF
