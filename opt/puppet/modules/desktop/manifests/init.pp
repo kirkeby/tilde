@@ -11,7 +11,7 @@ class common {
                'network-manager-openvpn',
                'network-manager-openvpn-gnome',
                ]:
-        ensure => latest,
+        ensure => present,
     }
 
     ### Avahi can bite my shiny metal ass!

@@ -20,7 +20,7 @@ class common {
                # A Java development environment
                'openjdk-7-jdk', 'junit4', 'ant',
                ]:
-        ensure => latest,
+        ensure => present,
     }
 
     ### Unattended Upgrades are a great idea!
