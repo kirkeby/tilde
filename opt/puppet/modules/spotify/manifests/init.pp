@@ -5,7 +5,6 @@ class spotify {
         repos => "non-free",
         key => "94558F59",
         key_server => "keyserver.ubuntu.com",
-        pin => "-10"
     }
     package {'spotify-client':}
 }

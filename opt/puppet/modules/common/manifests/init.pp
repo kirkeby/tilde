@@ -32,11 +32,6 @@ class common {
         source => 'puppet:///modules/common/50unattended-upgrades',
     }
 
-    ### Chrome 35 is **broken**
-    file { '/etc/apt/preferences.d/chrome-35-fuck-off':
-        source => 'puppet:///modules/common/chrome-35-fuck-off',
-    }
-
     ### Fucking morons mucking around with sitecustomize.py. Eat a bucket of
     ### cocks, please?
     $sitecustomize = '/usr/lib/python2.7/sitecustomize.py'
