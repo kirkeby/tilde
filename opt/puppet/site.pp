@@ -6,6 +6,7 @@ node skitop, slappy {
     include common
     include dnsmasq
     include spotify
+    include desktop
 }
 
 node ibofobot {
