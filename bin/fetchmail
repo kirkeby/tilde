@@ -2,5 +2,5 @@
 set -e
 dotlockfile -pl -r 0 "$0.lock"
 trap 'rm -f "$0.lock"' 0
-ping -q -c 1 josefine.csis.local
+ping -q -c 1 mail.csis.local
 yes yes | mbsync -a
