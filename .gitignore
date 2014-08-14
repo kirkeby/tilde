@@ -1,4 +1,4 @@
-TODO
+/TODO
 *~
 .zcompdump
 .zshrc-*
@@ -28,6 +28,8 @@ VirtualBox VMs/
 .esd_auth
 .gconf/
 .gconfd/
+/.gnome
+/.icons
 .gnome2/
 .gstreamer-0.10/
 .gtk-bookmarks
