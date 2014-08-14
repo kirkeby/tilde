@@ -40,6 +40,6 @@ if [[ -n "$DISPLAY" && "$TERM" = "xterm" ]] ; then
 fi
 
 # Source per-platform and per-host configurations.
-for postfix in `uname` `hostname` ; do
+for postfix in `uname` `hostname` $LOGNAME ; do
     test -e ~/.zshenv-$postfix && source ~/.zshenv-$postfix
 done
