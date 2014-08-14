@@ -132,3 +132,4 @@ Desktop/
 bin/fetchmail.lock
 opt/FrozenSynapse/
 /.bash_logout
+/work
