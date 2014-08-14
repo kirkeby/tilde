@@ -12,7 +12,7 @@ pgrep -f redshift || redshift &
 
 # Slow down the mouse a bit.
 xinput | grep -q "Razer Abyssus" \
-&& xinput --set-prop "Razer  Razer Abyssus"
+&& xinput --set-prop "Razer  Razer Abyssus" \
                 "Device Accel Constant Deceleration" 5
 
 # Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
