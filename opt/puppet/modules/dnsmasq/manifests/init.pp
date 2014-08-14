@@ -5,7 +5,7 @@ class dnsmasq {
         source => 'puppet:///modules/dnsmasq/dnsmasq.conf',
         owner => 'root', group => 'root', mode => 0644
     }
-    file { '/etc/dhcp3/dhclient.conf':
+    file { '/etc/dhcp/dhclient.conf':
         source => 'puppet:///modules/dnsmasq/dhclient.conf',
         owner => 'root', group => 'root', mode => 0644
     }
