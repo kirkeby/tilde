@@ -10,6 +10,11 @@ xrandr --output $external_monitor --primary
 # Yeah!
 pgrep -f redshift || redshift &
 
+# Slow down the mouse a bit.
+xinput | grep -q "Razer Abyssus" \
+&& xinput --set-prop "Razer  Razer Abyssus"
+                "Device Accel Constant Deceleration" 5
+
 # Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
 # with a useless .gnomerc. Why the flying fuck can I only start DBus needful
 # programs via your dumb-ass GUI-configured Startup Programs-crock?!  Won't
