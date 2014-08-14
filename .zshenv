@@ -23,8 +23,8 @@ export LESS='--RAW-CONTROL-CHARS --chop-long-lines --ignore-case'
 export LANG=en_US.UTF-8
 export GREP_OPTIONS='--exclude=*~ --color=auto'
 
-test -d /tmp/$USER || mkdir -p /tmp/$USER
-export TEMP=/tmp/$USER
+export TMPDIR=/tmp/$LOGNAME
+test -d $TMPDIR || mkdir -p $TMPDIR
 
 export _JAVA_OPTIONS="-Djava.net.preferIPv4Stack=true"
 
@@ -40,6 +40,6 @@ if [[ -n "$DISPLAY" && "$TERM" = "xterm" ]] ; then
 fi
 
 # Source per-platform and per-host configurations.
-for postfix in `uname` `hostname` ; do
+for postfix in `uname` `hostname` $LOGNAME ; do
     test -e ~/.zshenv-$postfix && source ~/.zshenv-$postfix
 done

@@ -1,8 +1,6 @@
 /TODO
 *~
 .zcompdump
-.zshrc-*
-.zshenv-*
 .ssh/known_hosts
 .viminfo
 .*.swp

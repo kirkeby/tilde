@@ -1,0 +1,9 @@
+if [ "$HOST" = "moria" ] ; then
+    # Create a persistent shared ssh-agent,
+    test -f $TMPDIR/agent.env && . $TMPDIR/agent.env
+
+    if ! ssh-add -l 2>/dev/null ; then
+        ssh-agent | egrep -v "^echo" > $TMPDIR/agent.env
+        . $TMPDIR/agent.env
+    fi
+fi
