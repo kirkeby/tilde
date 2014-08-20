@@ -10,10 +10,15 @@ xrandr --output $external_monitor --primary
 # Yeah!
 pgrep -f redshift || redshift &
 
-# Slow down the mouse a bit.
+# Slow down the mouse at home bit.
 xinput | grep -q "Razer Abyssus" \
 && xinput --set-prop "Razer  Razer Abyssus" \
                 "Device Accel Constant Deceleration" 5
+
+# Speed up the mouse at work bit.
+xinput | grep -q "Logitech USB-PS/2 Optical Mouse" \
+&& xinput --set-prop "Logitech USB-PS/2 Optical Mouse" \
+                "Device Accel Constant Deceleration" 0.5
 
 # Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
 # with a useless .gnomerc. Why the flying fuck can I only start DBus needful
