@@ -7,7 +7,6 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 # Incremental history, instead of last-to-write-wins history.
 setopt inc_append_history
-setopt share_history
 
 # Automatic pushd on cd.
 DIRSTACKSIZE=8

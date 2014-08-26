@@ -10,6 +10,7 @@ class desktop {
                'haskell-platform-prof',
                'network-manager-openvpn',
                'network-manager-openvpn-gnome',
+               'remmina-plugin-rdp',
                ]:
         ensure => present,
     }

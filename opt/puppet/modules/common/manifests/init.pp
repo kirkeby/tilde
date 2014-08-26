@@ -10,7 +10,7 @@ class common {
                'python-virtualenv', 'screen', 'vim',
                'apt-file',
                'libdata-ical-perl', 'libtext-autoformat-perl',
-               'html2text', 'dos2unix',
+               'html2text', 'dos2unix', 'units',
                'libnss3-tools',
                'realpath', 'mutt', 'isync', 'pidgin-sipe',
                'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
