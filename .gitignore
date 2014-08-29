@@ -1,6 +1,7 @@
 /TODO
 *~
 /.nv/
+/.elinks/
 .zcompdump
 .ssh/known_hosts
 .viminfo
