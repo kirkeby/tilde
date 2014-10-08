@@ -24,4 +24,9 @@ class desktop {
         command => "pkill -9 avahi",
         onlyif => "pgrep avahi"
     }
+
+    file { '/etc/sysctl.conf':
+        source => "puppet:///modules/desktop/sysctl.conf",
+    } ~>
+    exec { 'sysctl --load': }
 }
