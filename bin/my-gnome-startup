@@ -30,3 +30,8 @@ pgrep -f dbus_events.py || \
 # A special place in Hell is reserved for Dropbox, will you just stop eating
 # all my damn CPU and I/O all the time?! Thanks.
 pgrep -f dropbox || nice -n 20 ionice -c 3 dropbox start
+
+# What the fuck are you doing to my desktop, Gnome?! Suddenly not
+# auto-starting nm-applet, because my home-directory is not from
+# this machine orignally, are you flipping insane?
+pgrep -f nm-applet || nm-applet &
