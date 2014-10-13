@@ -33,6 +33,13 @@ export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 test -x $HOME/opt/go/bin/go && export GOROOT=$HOME/opt/go
 
+# Even more working around Gnome being brain-damaged, unsafe and stupid.
+# I want to run with the ssh-agent written by people I trust, you stupid
+# incompetent dimwitted morons.
+unset SSH_AGENT_PID
+who=`whoami`
+export SSH_AUTH_SOCK=`find /tmp -path '/tmp/ssh-*/agent.*' -user $who 2>/dev/null`
+
 # I really, really *really* should not have to muck about with TERM, but
 # gnome-terminal won't set it to what I want, so here I go :/
 if [[ -n "$DISPLAY" && "$TERM" = "xterm" ]] ; then
