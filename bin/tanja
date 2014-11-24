@@ -1,10 +1,2 @@
 #!/bin/sh
-
-geo="1024x700"
-if xrandr | grep -q 'primary 2560x1440+0+0' ; then
-    geo="2000x1200"
-fi
-
-password=`grep imap ~/.muttrc-password | sed -e "s/.*='//" -e "s/'$//"`
-
-exec rdesktop -K -g $geo tanja.csis.local -d CSIS -u ski -p "$password" "$@"
+exec rdp tanja.csis.local
