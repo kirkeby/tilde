@@ -7,4 +7,4 @@ fi
 
 password=`grep imap ~/.muttrc-password | sed -e "s/.*='//" -e "s/'$//"`
 
-exec rdesktop -K -g $geo -d CSIS -u ski -p "$password" "$@"
+exec xfreerdp -K -g $geo -d CSIS -u ski -p "$password" "$@"
