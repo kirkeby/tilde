@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+
+from collections import defaultdict
+from lxml import etree
+import os
+import re
+import sys
+import zipfile
+
+XML_NS = {
+    'n':'urn:oasis:names:tc:opendocument:xmlns:container',
+    'pkg':'http://www.idpf.org/2007/opf',
+    'dc':'http://purl.org/dc/elements/1.1/',
+}
+
+meta_fields = ['title', 'creator']
+
+not_ok_re = re.compile('[^a-zA-Z0-9 ]')
+
+
+def main(paths):
+    for path in paths:
+        info = get_epub_info(path)
+        info = defaultdict(lambda: '_unknown_', info)
+        dirname = os.path.dirname(path)
+        filename = u'{0[creator]} - {0[title]}.epub'.format(info)
+        print(path, '->', filename)
+        os.rename(path, os.path.join(dirname, filename.encode('utf-8')))
+
+
+def get_epub_info(fname):
+    zf = zipfile.ZipFile(fname)
+
+    # Yay indirection!
+    doc = etree.fromstring(zf.read('META-INF/container.xml'))
+    cfname, = doc.xpath('n:rootfiles/n:rootfile/@full-path',
+                        namespaces=XML_NS)
+
+    doc = etree.fromstring(zf.read(cfname))
+    info = {
+        field.tag.split('}')[-1]: field.text
+        for field in doc.xpath('/pkg:package/pkg:metadata/dc:*',
+                               namespaces=XML_NS)
+    }
+    info.update({
+        field.get('name'): field.get('content')
+        for field in doc.xpath('/pkg:package/pkg:metadata/pkg:meta',
+                               namespaces=XML_NS)
+    })
+    return info
+
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
