@@ -76,6 +76,7 @@ set visual=vim			# editor invoked by ~v in the builtin editor
 set write_inc=25		# show progress while writing mailboxes
 set smart_wrap                  # be a little intelligent when people aren't
 set rfc2047_parameters=yes
+set pipe_decode
 
 # Handle reply-to and friends as per RFC 822
 set followup_to=no
