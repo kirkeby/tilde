@@ -38,7 +38,8 @@ test -x $HOME/opt/go/bin/go && export GOROOT=$HOME/opt/go
 # incompetent dimwitted morons.
 unset SSH_AGENT_PID
 who=`whoami`
-export SSH_AUTH_SOCK=`find /tmp -path '/tmp/ssh-*/agent.*' -user $who 2>/dev/null`
+SSH_AUTH_SOCK=`find /tmp -path '/tmp/ssh-*/agent.*' -user $who 2>/dev/null`
+export SSH_AUTH_SOCK
 
 # I really, really *really* should not have to muck about with TERM, but
 # gnome-terminal won't set it to what I want, so here I go :/
