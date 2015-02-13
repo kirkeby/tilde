@@ -20,13 +20,6 @@ xinput | grep -q "Logitech USB-PS/2 Optical Mouse" \
 && xinput --set-prop "Logitech USB-PS/2 Optical Mouse" \
                 "Device Accel Constant Deceleration" 0.5
 
-# Fuck you, Gnome. You cock-sucking morons broke .xsessionrc, and replaced it
-# with a useless .gnomerc. Why the flying fuck can I only start DBus needful
-# programs via your dumb-ass GUI-configured Startup Programs-crock?!  Won't
-# you all just die horrible deaths. Please?
-pgrep -f dbus_events.py || \
-    ~/opt/python/bin/python ~/opt/dbus-event/dbus_events.py
-
 # A special place in Hell is reserved for Dropbox, will you just stop eating
 # all my damn CPU and I/O all the time?! Thanks.
 pgrep -f dropbox || nice -n 20 ionice -c 3 dropbox start
