@@ -22,6 +22,8 @@ alias cp='cp -i'
 
 alias vmi=vim
 
+alias display=xdg-open
+
 # Enable command-line completion
 autoload -U compinit
 compinit
