@@ -24,6 +24,8 @@ alias vmi=vim
 
 alias display=xdg-open
 
+alias review-branch="vim +'DiffReview git diff master...'"
+
 # Enable command-line completion
 autoload -U compinit
 compinit
