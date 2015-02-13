@@ -21,8 +21,16 @@ xinput | grep -q "Logitech USB-PS/2 Optical Mouse" \
                 "Device Accel Constant Deceleration" 0.5
 
 # A special place in Hell is reserved for Dropbox, will you just stop eating
-# all my damn CPU and I/O all the time?! Thanks.
-pgrep -f dropbox || nice -n 20 ionice -c 3 dropbox start
+# all my damn CPU, memory and I/O all the time?! Thanks.
+pgrep -f dropbox || (
+
+    # Fuck whichever moron first decided to preallocate virtual memory in
+    # processes, it completely at utterly fucks with memory-limiting processes
+    # via ulimit.
+    # Dropbox starts with a VIRT size of > 2GB, which is just fucking insane.
+    ulimit -v `expr 3 \* 1024 \* 1024`
+    exec nice -n 20 ionice -c 3 dropbox start
+)
 
 # What the fuck are you doing to my desktop, Gnome?! Suddenly not
 # auto-starting nm-applet, because my home-directory is not from
