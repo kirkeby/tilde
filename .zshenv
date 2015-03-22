@@ -21,7 +21,7 @@ export VISUAL=vim
 export PAGER=less
 export LESS='--RAW-CONTROL-CHARS --chop-long-lines --ignore-case'
 export LANG=en_US.UTF-8
-export GREP_OPTIONS='--exclude=*~ --color=auto'
+alias grep='grep --exclude=*~ --color=auto'
 
 export TMPDIR=/tmp/$LOGNAME
 test -d $TMPDIR || mkdir -p $TMPDIR
