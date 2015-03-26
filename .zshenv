@@ -37,8 +37,10 @@ test -x $HOME/opt/go/bin/go && export GOROOT=$HOME/opt/go
 # I want to run with the ssh-agent written by people I trust, you stupid
 # incompetent dimwitted morons.
 unset SSH_AGENT_PID SSH_AUTH_SOCK
-# Find a working ssh-agent
-for socket in $(find $TMPDIR -path '*/ssh-*/agent.*' -user `whoami` 2>/dev/null)
+
+# Find a working ssh-agent; note we search all the /tmp/, because some clever
+# moron decided to sgid ssh-agent, causing it to not honour $TMPDIR
+for socket in $(find /tmp/ -path '*/ssh-*/agent*' -user `whoami` 2>/dev/null)
 do
     # Suck a fat cock whoever wrote ssh-add, an empty list of identities is
     # not a fucking error, and using stdout to print this one error, but
@@ -53,6 +55,13 @@ do
         break
     fi
 done
+
+# Create a persistent shared ssh-agent, if we're running on a desktop and
+# did not find one above.
+if [ "$DISPLAY" = ":0.0" -a -z "$SSH_AUTH_SOCK" ] ; then
+    ssh-agent | egrep -v "^echo" > $TMPDIR/ssh-agent.env
+    . $TMPDIR/ssh-agent.env
+fi
 
 
 # I really, really *really* should not have to muck about with TERM, but
