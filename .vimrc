@@ -2,6 +2,7 @@ set backup
 "set undofile
 set encoding=utf-8
 set textwidth=78
+set colorcolumn=+2
 set shiftwidth=4
 set softtabstop=4
 set expandtab
@@ -22,11 +23,6 @@ set modeline
 " When formatting text, recognize numbered lists.
 set formatoptions+=n
 
-" Show invisible characters.
-set list
-set listchars=tab:▸\ 
-"set listchars+=eol:¬
-"set listchars+=trail:♦
 set tags=~/tags
 
 " Holy fucking christ. Vim must never, ever, ever, *EVER* fucking touch my
@@ -43,6 +39,7 @@ endtry
 
 syntax enable
 set background=dark
+set list
 
 filetype plugin on
 
@@ -60,27 +57,30 @@ let mapleader=","
 noremap <leader><leader> :make<cr>
 noremap <leader>. :lnext<cr>
 
-" Highlight evil hard tabs, trailing white-space and overlong lines
-highlight clear Evil
-match Evil /\t\|.\{79,\}\|  *$/
+" Highlight evil hard tabs and trailing white-space (.gvimrc does this
+" differently, so skip this for GUI).
+if !has("gui_running")
+    set listchars=tab:\ \ ,trail:\ 
+
+    autocmd BufNewFile,BufRead *
+        \ highlight SpecialKey term=standout ctermbg=red ctermfg=yellow
+    autocmd BufNewFile,BufRead *.shpaml highlight clear SpecialKey
+    autocmd BufNewFile,BufRead *.html highlight clear SpecialKey
+    autocmd BufNewFile,BufRead *.cs highlight clear SpecialKey
+    autocmd BufNewFile,BufRead *.cmd highlight clear SpecialKey
+    autocmd BufNewFile,BufRead *.go highlight clear SpecialKey
+endif
 
 " Various temporary-file syntax rules
-autocmd BufNewFile,BufRead *
-    \ highlight Evil term=standout ctermbg=red ctermfg=yellow
 autocmd BufNewFile,BufRead * syntax sync fromstart
 autocmd BufNewFile,BufRead psql.edit.* set syntax=sql
 autocmd BufNewFile,BufRead ~/quotes/* setlocal tw=60
 autocmd BufNewFile,BufRead *.shpaml setlocal sw=2 sts=2
-autocmd BufNewFile,BufRead *.shpaml highlight clear Evil
-autocmd BufNewFile,BufRead *.html highlight clear Evil
-autocmd BufNewFile,BufRead *.cs highlight clear Evil
-autocmd BufNewFile,BufRead *.cmd highlight clear Evil
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set tw=68
 
 autocmd FileType go compiler go
 " *shudder*
 autocmd FileType go setlocal noexpandtab shiftwidth=8 tabstop=8 softtabstop=8 nolist tw=0 autoindent smartindent makeprg=make
-autocmd BufNewFile,BufRead *.go highlight clear Evil
 
 " CtrlP ignores
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist|github.com)$'
