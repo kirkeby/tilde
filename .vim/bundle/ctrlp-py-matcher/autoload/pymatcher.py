@@ -1,38 +1,42 @@
 import heapq
+import os
 import re
 import vim
 
+
 def CtrlPPyMatch():
+    print('hello?!')
     items = vim.eval('a:items')
     astr = vim.eval('a:str')
     lowAstr = astr.lower()
     limit = int(vim.eval('a:limit'))
     mmode = vim.eval('a:mmode')
     aregex = int(vim.eval('a:regex'))
-
     rez = vim.eval('s:rez')
-
-    specialChars = ['^','$','.','{','}','(',')','[',']','\\','/','+']
 
     regex = ''
     if aregex == 1:
         regex = astr
+
     else:
-        if len(lowAstr) == 1:
-            c = lowAstr
-            if c in specialChars:
-                c = '\\' + c
-            regex += c
-        else:
-            for c in lowAstr[:-1]:
-                if c in specialChars:
-                    c = '\\' + c
-                regex += c + '[^' + c + ']*'
+        splitters = ' _/.-'
+        pieces = []
+        piece = ''
+        for c in astr:
+            if c in splitters:
+                pieces.append(piece)
+                if c != ' ':
+                    pieces.append(c)
+                piece = ''
             else:
-                c = lowAstr[-1]
-                if c in specialChars:
-                    c = '\\' + c
-                regex += c
+                piece += c
+        pieces.append(piece)
+        regex = '.*'.join(
+            re.escape(piece)
+            for piece in filter(None, pieces)
+        )
+        #with open(os.path.expanduser('~/pymatcher.log'), 'a+') as d:
+        #    d.write('text/pieces/regex: %r %r %r\n' % (astr, pieces, regex))
 
     res = []
     prog = re.compile(regex)

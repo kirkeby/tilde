@@ -84,3 +84,4 @@ autocmd FileType go setlocal noexpandtab shiftwidth=8 tabstop=8 softtabstop=8 no
 
 " CtrlP ignores
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist|github.com)$'
+let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}

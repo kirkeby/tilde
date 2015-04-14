@@ -1,21 +1,15 @@
 " Python Matcher
 
-if !has('python') && !has('python3')
-    echo 'In order to use pymatcher plugin, you need +python or +python3 compiled vim'
-endif
-
 let s:plugin_path = escape(expand('<sfile>:p:h'), '\')
 
-if has('python3')
-  execute 'py3file ' . s:plugin_path . '/pymatcher.py'
-else
+if has('python')
   execute 'pyfile ' . s:plugin_path . '/pymatcher.py'
 endif
 
 function! pymatcher#PyMatch(items, str, limit, mmode, ispath, crfile, regex)
 
     call clearmatches()
-    
+
     if a:str == ''
         return a:items[0:a:limit]
     endif
@@ -23,7 +17,7 @@ function! pymatcher#PyMatch(items, str, limit, mmode, ispath, crfile, regex)
     let s:rez = []
     let s:regex = ''
 
-    execute 'python' . (has('python3') ? '3' : '') . ' CtrlPPyMatch()'
+    execute 'python CtrlPPyMatch()'
 
     let s:matchregex = '\v\c'
 
