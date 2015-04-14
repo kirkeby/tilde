@@ -1,6 +1,6 @@
-import vim, re
 import heapq
-from datetime import datetime
+import re
+import vim
 
 def CtrlPPyMatch():
     items = vim.eval('a:items')
@@ -52,7 +52,6 @@ def CtrlPPyMatch():
 
         return 0
 
-
     def path_score(line):
         lineLower = line.lower()
         result = prog.search(lineLower)
@@ -63,24 +62,22 @@ def CtrlPPyMatch():
 
         return 0
 
-
     if mmode == 'filename-only':
         res = [(filename_score(line), line) for line in items]
-
     elif mmode == 'first-non-tab':
         res = [(path_score(line.split('\t')[0]), line) for line in items]
-
     elif mmode == 'until-last-tab':
         res = [(path_score(line.rsplit('\t')[0]), line) for line in items]
-
     else:
         res = [(path_score(line), line) for line in items]
 
-    rez.extend([line for score, line in heapq.nlargest(limit, res)])
+    rez.extend(line for score, line in heapq.nlargest(limit, res))
 
     # Use double quoted vim strings and escape \
-    vimrez = ['"' + line.replace('\\', '\\\\').replace('"', '\\"') + '"' for line in rez]
+    vimrez = [
+        '"' + line.replace('\\', '\\\\').replace('"', '\\"') + '"'
+        for line in rez
+    ]
 
     vim.command("let s:regex = '%s'" % regex)
     vim.command('let s:rez = [%s]' % ','.join(vimrez))
-    
