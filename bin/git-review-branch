@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export VISUAL=vim
+test -n "$DISPLAY" && export VISUAL=gvim
+
+exec ${VISUAL} +'DiffReview git diff master...'
