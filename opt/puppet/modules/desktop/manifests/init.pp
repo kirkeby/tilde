@@ -12,6 +12,7 @@ class desktop {
                'network-manager-openvpn-gnome',
                'remmina-plugin-rdp',
                'xclip',
+               'vim-gtk',
                ]:
         ensure => present,
     }
