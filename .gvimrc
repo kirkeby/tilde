@@ -1,5 +1,6 @@
 " A bit more than two line-widths to allow for UI taking up some space.
 winsize 180 60
+vsplit
 
 " Pretty colors.
 colorscheme desert
