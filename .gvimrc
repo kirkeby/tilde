@@ -3,9 +3,7 @@ winsize 180 60
 vsplit
 
 " Pretty colors.
-colorscheme desert
-highlight NonText guibg=grey20
-highlight SpecialKey guibg=salmon
+colorscheme solarized
 
 " Stuff there is room for here, but not in a normal 80x24 terminal vim.
 set number
