@@ -20,6 +20,7 @@ set ttyfast
 set incsearch
 set viminfo='1000,f1,<50,s10,h,%
 set modeline
+set nofoldenable
 
 " When formatting text, recognize numbered lists.
 set formatoptions+=n
