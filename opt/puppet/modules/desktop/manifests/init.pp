@@ -17,6 +17,11 @@ class desktop {
         ensure => present,
     }
 
+    ### Packages I do not want.
+    package { ['puppet']:
+        ensure => absent,
+    }
+
     ### Avahi can bite my shiny metal ass!
     exec { "disable-avahi-daemon":
         command => "dpkg-divert --add --local --rename /usr/sbin/avahi-daemon",
