@@ -131,6 +131,7 @@ tilde.html
 Desktop/
 bin/fetchmail.lock
 opt/FrozenSynapse/
+/.bashrc
 /.bash_logout
 /work
 otp-backup-codes
