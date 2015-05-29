@@ -10,7 +10,7 @@ node slaptop, slappy, moria {
     include cacerts
 }
 
-node ibofobot {
+node ibofobot, jessica {
     include common
     include cacerts
 }
