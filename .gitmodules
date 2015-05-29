@@ -1,6 +1,3 @@
-[submodule "opt/puppet/modules/apt"]
-	path = opt/puppet/modules/apt
-	url = https://github.com/evolvingweb/puppet-apt
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
