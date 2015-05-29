@@ -16,7 +16,7 @@ class common {
                'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
                'libssl-dev',
                'elinks',
-               'texlive', 'texlive-latex-extra',
+               'texlive', 'texlive-latex-extra', 'texlive-lang-danish',
                # A Java development environment
                'openjdk-7-jdk', 'junit4', 'ant',
                ]:

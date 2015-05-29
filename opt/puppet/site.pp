@@ -7,8 +7,10 @@ node slaptop, slappy, moria {
     include dnsmasq
     include spotify
     include desktop
+    include cacerts
 }
 
 node ibofobot {
     include common
+    include cacerts
 }
