@@ -1,0 +1,3 @@
+if hostname --fqdn | fgrep -q '.csis.' ; then
+    export PS1='[%*] %n@%m:%~$ '
+fi
