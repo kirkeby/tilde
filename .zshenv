@@ -8,6 +8,17 @@ if [ -d ~/opt ] ; then
     do
         export PATH=${bin}:$PATH
     done
+
+    # Go looking for a rust binary distribution
+    for dir in $HOME/opt/rust-* ; do
+        test -f $dir/rust-installer-version || continue
+        for root in $dir/* ; do
+            test -d $root/bin || continue
+            export PATH=$root/bin:$PATH
+            export LD_LIBRARY_PATH=$root/lib:$LD_LIBRARY_PATH
+        done
+        break
+    done
 fi
 
 test -d $HOME/.cabal/bin && export PATH=$PATH:$HOME/.cabal/bin
