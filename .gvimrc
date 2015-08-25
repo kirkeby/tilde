@@ -8,6 +8,7 @@ colorscheme solarized
 " Stuff there is room for here, but not in a normal 80x24 terminal vim.
 set number
 set cursorline
+set colorcolumn=+2
 
 " Show invisible characters; we can actually do this in a gvim without
 " screwing up copy/paste.

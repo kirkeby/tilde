@@ -3,7 +3,6 @@ set backup
 set undofile
 set encoding=utf-8
 set textwidth=78
-set colorcolumn=+2
 set shiftwidth=4
 set softtabstop=4
 set expandtab
