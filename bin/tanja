@@ -1,2 +1,2 @@
 #!/bin/sh
-exec rdp tanja.csis.local
+exec rdp TANJA.csis.local
