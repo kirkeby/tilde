@@ -10,7 +10,7 @@ if [ -d ~/opt ] ; then
     done
 
     # Go looking for a rust binary distribution
-    for dir in $HOME/opt/rust-* ; do
+    for dir in $HOME/opt/rust-*(N) ; do
         test -f $dir/rust-installer-version || continue
         for root in $dir/* ; do
             test -d $root/bin || continue
