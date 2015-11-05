@@ -18,6 +18,10 @@ set allow_8bit			# never do Q-P encoding on legal 8-bit chars
 set noconfirmappend		# don't ask me if i want to append to mailboxes
 set confirmcreate		# prompt when creating new files
 set copy=yes			# always save a copy of outgoing messages
+set crypt_autosign=no           # fuck no
+set crypt_replyencrypt=no       # fuck no
+set crypt_replysign=no          # fuck no
+set crypt_replysignencrypted=no # fuck no
 set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
 set editor="vim"                # editor to use when composing messages
