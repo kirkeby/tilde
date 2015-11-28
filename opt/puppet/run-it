@@ -4,6 +4,7 @@ set -e
 
 cd `dirname $0`
 
+test -e /etc/init.d/puppet && sudo apt-get remove --purge puppet
 test -x /usr/bin/puppet || sudo apt-get install --yes puppet-common
 
 sudo puppet apply --verbose --no-listen --modulepath=$PWD/modules $PWD/site.pp
