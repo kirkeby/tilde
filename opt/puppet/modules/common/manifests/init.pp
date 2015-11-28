@@ -12,7 +12,7 @@ class common {
                'libdata-ical-perl', 'libtext-autoformat-perl',
                'html2text', 'dos2unix', 'units',
                'libnss3-tools',
-               'realpath', 'mutt', 'isync', 'pidgin-sipe',
+               'realpath',
                'libssl-dev',
                'elinks',
                'texlive', 'texlive-latex-extra', 'texlive-lang-danish',

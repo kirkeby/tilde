@@ -13,6 +13,7 @@ class desktop {
                'remmina-plugin-rdp',
                'xclip',
                'vim-gtk',
+                'mutt', 'isync', 'pidgin-sipe',
                'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
                ]:
         ensure => present,
