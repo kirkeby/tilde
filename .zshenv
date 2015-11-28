@@ -2,18 +2,15 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$HOME/bin:$PATH
 
-# Add private bin's to head of PATH
-if [ -d ~/opt ] ; then
-    for bin in `ls -dr ~/opt/*/bin`
-    do
-        export PATH=${bin}:$PATH
-    done
-
-    for lib in `ls -dr ~/opt/*/lib`
-    do
-        export LD_LIBRARY_PATH=${lib}:$LD_LIBRARY_PATH
-    done
-fi
+# Add private software installations
+for bin in ~/opt/*/bin(N)
+do
+    export PATH=${bin}:$PATH
+done
+for lib in ~/opt/*/lib(N)
+do
+    export LD_LIBRARY_PATH=${lib}:$LD_LIBRARY_PATH
+done
 
 test -d $HOME/.cabal/bin && export PATH=$PATH:$HOME/.cabal/bin
 
