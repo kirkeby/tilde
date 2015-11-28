@@ -8,9 +8,11 @@ node slaptop, slappy, moria {
     include spotify
     include desktop
     include cacerts
+    include postfix
 }
 
 node ibofobot, jessica {
     include common
     include cacerts
+    include postfix
 }
