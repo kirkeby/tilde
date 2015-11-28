@@ -13,7 +13,6 @@ class common {
                'html2text', 'dos2unix', 'units',
                'libnss3-tools',
                'realpath', 'mutt', 'isync', 'pidgin-sipe',
-               'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
                'libssl-dev',
                'elinks',
                'texlive', 'texlive-latex-extra', 'texlive-lang-danish',
