@@ -38,4 +38,8 @@ class desktop {
         source => "puppet:///modules/desktop/sysctl.conf",
     } ~>
     exec { 'sysctl --load': }
+
+    file { '/etc/udev/rules.d/70-u2f.rules':
+        source => "puppet:///modules/desktop/u2f-udev.rules",
+    }
 }
