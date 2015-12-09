@@ -16,6 +16,12 @@ test -d $HOME/.cabal/bin && export PATH=$PATH:$HOME/.cabal/bin
 
 which rbenv > /dev/null && eval "$(rbenv init -)"
 
+# This is who I am.
+export DEBFULLNAME='Sune Kirkeby'
+export DEBEMAIL='mig@ibofobi.dk'
+export GIT_AUTHOR_EMAIL='mig@ibofobi.dk'
+export GIT_COMMITTER_EMAIL='mig@ibofobi.dk'
+
 export PATH
 
 export EDITOR=vim
