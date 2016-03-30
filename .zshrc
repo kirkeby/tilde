@@ -20,6 +20,8 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
 
+alias ssh-insecure="ssh -o 'UserKnownHostsFile /dev/null' -o 'StrictHostKeyChecking no'"
+
 alias vmi=vim
 
 alias display=xdg-open
