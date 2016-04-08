@@ -21,6 +21,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 
 alias ssh-insecure="ssh -o 'UserKnownHostsFile /dev/null' -o 'StrictHostKeyChecking no'"
+alias scp-insecure="scp -o 'UserKnownHostsFile /dev/null' -o 'StrictHostKeyChecking no'"
 
 alias vmi=vim
 
