@@ -25,3 +25,6 @@ tags
 
 # Random files
 /bin/fetchmail.lock
+/irclogs/*
+/flexo
+/ibofobi.dk
