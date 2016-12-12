@@ -5,5 +5,5 @@ set -e
 echo -n 'New password:'
 read -s password
 
-sed -e "s/Pass .*/Pass ${password}/" -i~ ~/.mbsyncrc
+sed -e "s/Pass .*/Pass \"${password}\"/" -i~ ~/.mbsyncrc
 sed -e "s/\(set .*_pass=\).*/\1'${password}'/" -i~ ~/.muttrc-password
