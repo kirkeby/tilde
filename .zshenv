@@ -12,6 +12,9 @@ do
     export LD_LIBRARY_PATH=${lib}:$LD_LIBRARY_PATH
 done
 
+# Source rustup env if installed
+test -f $HOME/.cargo/env && source $HOME/.cargo/env
+
 test -d $HOME/.cabal/bin && export PATH=$PATH:$HOME/.cabal/bin
 
 which rbenv > /dev/null && eval "$(rbenv init -)"
