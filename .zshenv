@@ -15,6 +15,9 @@ done
 # Source rustup env if installed
 test -f $HOME/.cargo/env && source $HOME/.cargo/env
 
+# Source emsdk env if installed
+test -f $HOME/opt/emsdk/emsdk_env.sh && source $HOME/opt/emsdk/emsdk_env.sh
+
 test -d $HOME/.cabal/bin && export PATH=$PATH:$HOME/.cabal/bin
 
 which rbenv > /dev/null && eval "$(rbenv init -)"
