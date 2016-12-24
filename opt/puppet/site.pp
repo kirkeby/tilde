@@ -16,3 +16,9 @@ node ibofobot, jessica {
     include cacerts
     include postfix
 }
+
+node abraham {
+    include common
+    include cacerts
+    include vagrant
+}

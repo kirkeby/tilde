@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Fucking Vagrant.  Just fucking... *sigh*
+
+set -e
+
+version=1.9.1
+deb=vagrant_${version}_x86_64.deb
+
+if [ -d $HOME/opt/vagrant ] ; then
+    echo "Error: Vagrant already installed in ~/opt"
+    exit 1
+fi
+
+if [ ! -f ${deb} ] ; then
+    wget https://releases.hashicorp.com/vagrant/${version}/${deb}
+fi
+
+ar x ${deb} data.tar.gz
+if [ -d opt ] ; then
+    rm -rf opt/
+fi
+tar xzf data.tar.gz ./opt
+mv opt/vagrant ../opt
+rm -f data.tar.gz opt ${deb}

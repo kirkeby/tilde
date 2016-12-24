@@ -1,0 +1,30 @@
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+    config.vm.box = "debian/contrib-jessie64"
+
+    config.vm.network :hostonly, "172.16.16.16"
+    config.vm.customize [
+        "modifyvm", :id,
+        "--cpus", 2,
+        "--memory", 4096,
+        "--nictype1", "virtio",
+        #"--natdnshostresolver1", "on",
+    ]
+
+    config.vm.share_folder "projects", "/home/vagrant/Projects", "../Projects"
+
+    config.vm.provision :shell do |shell|
+        shell.inline = "/vagrant/pre-puppet"
+    end
+    config.vm.provision :puppet do |puppet|
+        puppet.manifests_path = "../opt/puppet"
+        puppet.manifest_file = "site.pp"
+        puppet.module_path = "../opt/puppet/modules"
+    end
+end
+
+Vagrant::Config.run(2) do |config|
+    config.vm.hostname = "abraham"  # Emperor Joshua Abraham Norton
+    config.ssh.insert_key = false
+end
