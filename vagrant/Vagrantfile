@@ -3,13 +3,12 @@
 Vagrant::Config.run do |config|
     config.vm.box = "debian/contrib-jessie64"
 
-    config.vm.network :hostonly, "172.16.16.16"
     config.vm.customize [
         "modifyvm", :id,
         "--cpus", 2,
         "--memory", 4096,
         "--nictype1", "virtio",
-        #"--natdnshostresolver1", "on",
+        "--natdnshostresolver1", "on",
     ]
 
     config.vm.share_folder "projects", "/home/vagrant/Projects", "../Projects"
