@@ -2,4 +2,6 @@
 
 set -e
 
-apt-get install --yes puppet-common
+apt-get install --yes zsh puppet-common
+
+chsh --shell /usr/bin/zsh vagrant
