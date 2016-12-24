@@ -1,0 +1,44 @@
+#!/bin/sh
+
+set -e
+
+cd `dirname $0`
+
+install_cmake() {
+    wget https://cmake.org/files/v3.7/cmake-3.7.1-Linux-x86_64.tar.gz
+    tar xzf cmake-3.7.1-Linux-x86_64.tar.gz
+    mv cmake-3.7.1-Linux-x86_64 cmake
+}
+
+install_vagrant() {
+    version=1.9.1
+    deb=vagrant_${version}_x86_64.deb
+
+    wget https://releases.hashicorp.com/vagrant/${version}/${deb}
+    ar x ${deb} data.tar.gz
+    tar -xz -C .. -f data.tar.gz ./opt/vagrant
+    rm -f data.tar.gz opt ${deb}
+}
+
+install_emsdk() {
+    wget https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz
+    tar xzvf emsdk-portable.tar.gz
+    mv emsdk_portable emsdk
+    cd emsdk
+    ./emsdk update
+    ./emsdk install sdk-incoming-64bit
+    ./emsdk activate sdk-incoming-64bit
+}
+
+install_rustup() {
+    curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path
+    mkdir rustup
+}
+
+for what in "$@" ; do
+    if [ -d "${what}" ] ; then
+        echo "Error: $what already installed."
+        exit 1
+    fi
+    eval install_${what}
+done
