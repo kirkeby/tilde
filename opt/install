@@ -11,6 +11,15 @@ install_cmake() {
     mv cmake-3.7.1-Linux-x86_64 cmake
 }
 
+install_packer() {
+    wget https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip
+    mkdir -p packer/bin
+    cd packer/bin
+    unzip ../packer_0.12.1_linux_amd64.zip
+    cd -
+    rm -f packer_0.12.1_linux_amd64.zip
+}
+
 install_vagrant() {
     version=1.9.1
     deb=vagrant_${version}_x86_64.deb
