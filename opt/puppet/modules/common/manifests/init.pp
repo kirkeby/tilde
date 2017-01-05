@@ -15,9 +15,6 @@ class common {
                'realpath',
                'libssl-dev',
                'elinks',
-               'texlive', 'texlive-latex-extra', 'texlive-lang-danish',
-               # A Java development environment
-               'openjdk-7-jdk', 'junit4', 'ant',
                'ecryptfs-utils',
                ]:
         ensure => present,
