@@ -20,8 +20,10 @@ class desktop {
     }
 
     ### Packages I do not want.
-    package { ['puppet']:
-        ensure => absent,
+    package { [
+            'puppet' 'gnome-user-share', 'mate-user-share',
+        ]:
+            ensure => absent,
     }
 
     ### Avahi can bite my shiny metal ass!
