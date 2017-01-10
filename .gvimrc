@@ -5,6 +5,9 @@ vsplit
 " Pretty colors.
 colorscheme solarized
 
+" A pretty font.
+set guifont=Ubuntu\ Mono\ 13
+
 " Stuff there is room for here, but not in a normal 80x24 terminal vim.
 set number
 set cursorline
