@@ -44,4 +44,7 @@ class desktop {
     file { '/etc/udev/rules.d/70-u2f.rules':
         source => "puppet:///modules/desktop/u2f-udev.rules",
     }
+    file { '/etc/udev/rules.d/10-openmono.rules':
+        source => "puppet:///modules/desktop/10-openmono.rules",
+    }
 }
