@@ -15,6 +15,7 @@ class desktop {
                'vim-gtk',
                 'mutt', 'isync', 'pidgin-sipe',
                'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
+               'liblockfile-bin',
                ]:
         ensure => present,
     }
