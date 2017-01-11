@@ -21,7 +21,7 @@ class desktop {
 
     ### Packages I do not want.
     package { [
-            'puppet' 'gnome-user-share', 'mate-user-share',
+            'puppet', 'gnome-user-share', 'mate-user-share',
         ]:
             ensure => absent,
     }
