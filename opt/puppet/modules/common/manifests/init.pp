@@ -7,7 +7,7 @@ class common {
     package { ['zsh', 'git', 'build-essential', 'python2.7', 'python2.7-dev',
                'libxml2-dev', 'libxslt1-dev', 'libreadline-dev',
                'libncurses5-dev',
-               'python-virtualenv', 'screen', 'vim',
+               'python-virtualenv', 'screen', 'vim-gtk-py2',
                'apt-file',
                'libdata-ical-perl', 'libtext-autoformat-perl',
                'html2text', 'dos2unix', 'units',
