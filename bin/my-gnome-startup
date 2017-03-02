@@ -33,3 +33,6 @@ pgrep -f dropbox || (
 # auto-starting nm-applet, because my home-directory is not from
 # this machine orignally, are you flipping insane?
 pgrep -f nm-applet || nm-applet &
+
+# Make sure both my local users have full X access.
+[ "$LOGNAME" = "sune" ] && xhost +SI:localuser:ski
