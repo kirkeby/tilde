@@ -1,6 +1,7 @@
 set autoread
 set backup
 set undofile
+set undodir=$HOME/.vim/undo
 set encoding=utf-8
 set textwidth=78
 set shiftwidth=4
