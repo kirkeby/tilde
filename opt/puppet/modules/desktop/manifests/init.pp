@@ -37,6 +37,13 @@ class desktop {
         onlyif => "pgrep avahi"
     }
 
+    ### systemd-resolv can also go die in a fire.
+    service { 'systemd-resolved':
+        provider => 'systemd',
+        ensure => 'stopped',
+        enable => false,
+    }
+
     file { '/etc/sysctl.conf':
         source => "puppet:///modules/desktop/sysctl.conf",
     } ~>
