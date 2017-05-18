@@ -1,6 +1,6 @@
 class common {
     File {
-        owner => root, group => root, mode => 0644,
+        owner => root, group => root, mode => '0644',
     }
 
     ### Packages I use everywhere I go.

@@ -13,7 +13,7 @@ define apt::pin(
 		ensure => file,
 		owner => root,
 		group => root,
-		mode => 644,
+		mode => '0644',
 		content => "# ${name}\nPackage: ${packages}\nPin: release a=${name}\nPin-Priority: ${priority}",
 	}
 

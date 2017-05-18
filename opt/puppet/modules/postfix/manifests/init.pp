@@ -15,7 +15,7 @@ class postfix::config {
     File {
         owner   => root,
         group   => root,
-        mode    => 644,
+        mode    => '0644',
     }
     Exec {
         refreshonly => true,
