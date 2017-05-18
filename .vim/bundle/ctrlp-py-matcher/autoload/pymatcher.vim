@@ -2,8 +2,8 @@
 
 let s:plugin_path = escape(expand('<sfile>:p:h'), '\')
 
-if has('python')
-  execute 'pyfile ' . s:plugin_path . '/pymatcher.py'
+if has('python3')
+  execute 'py3file ' . s:plugin_path . '/pymatcher.py'
 endif
 
 function! pymatcher#PyMatch(items, str, limit, mmode, ispath, crfile, regex)
@@ -17,7 +17,7 @@ function! pymatcher#PyMatch(items, str, limit, mmode, ispath, crfile, regex)
     let s:rez = []
     let s:regex = ''
 
-    execute 'python CtrlPPyMatch()'
+    execute 'python3 CtrlPPyMatch()'
 
     let s:matchregex = '\v\c'
 
