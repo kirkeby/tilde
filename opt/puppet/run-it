@@ -4,7 +4,14 @@ set -e
 
 cd `dirname $0`
 
-test -e /etc/init.d/puppet && sudo apt-get remove --purge puppet
-test -x /usr/bin/puppet || sudo apt-get install --yes puppet-common
+# Suck a bit fat cock, Ubuntu, there was no fucking reason to rename
+# packages and break everything.
+if [ `lsb_release --short --codename` = zesty ] ; then
+    sudo apt install --yes puppet
+    sudo puppet apply --verbose --modulepath=$PWD/modules $PWD/site.pp
+else
+    test -e /etc/init.d/puppet && sudo apt-get remove --purge puppet
+    test -x /usr/bin/puppet || sudo apt-get install --yes puppet-common
 
-sudo puppet apply --verbose --no-listen --modulepath=$PWD/modules $PWD/site.pp
+    sudo puppet apply --verbose --no-listen --modulepath=$PWD/modules $PWD/site.pp
+fi
