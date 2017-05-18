@@ -2,7 +2,11 @@ Exec {
     path => ['/bin', '/sbin', '/usr/bin', '/usr/sbin']
 }
 
-node slaptop, slappy, moria {
+$desktop = false;
+
+node slaptop, slappy, moria, erewhon {
+    $desktop = true;
+
     include common
     include dnsmasq
     include spotify

@@ -26,7 +26,7 @@ class common {
         source => 'puppet:///modules/common/20auto-upgrades',
     }
     file { '/etc/apt/apt.conf.d/50unattended-upgrades':
-        source => 'puppet:///modules/common/50unattended-upgrades',
+        content => template('common/50unattended-upgrades.erb'),
     }
 
     ### Fucking morons mucking around with sitecustomize.py. Eat a bucket of
