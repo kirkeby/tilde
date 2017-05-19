@@ -16,6 +16,7 @@ class common {
                'libssl-dev',
                'elinks',
                'ecryptfs-utils',
+               'openssh-server',
                ]:
         ensure => present,
     }
