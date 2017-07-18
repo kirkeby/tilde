@@ -1,6 +1,10 @@
 # Yes, do run.
 ENABLED=1
 
+# No, do not fucking use resolvconf, resolv.conf is where resolv configuration
+# is you brain-damaged stupid fucking useless pieces of Ubuntu shits.
+RESOLV_CONF=/etc/resolv.conf
+
 # No, do not fucking read resolv.conf or talk DBus, also do not
 # read /etc/dnsmasq.d which is populated with network-manager stupidity.
 DNSMASQ_OPTS="--no-resolv --enable-dbus=dk.ibofobi.dnsmasq"
