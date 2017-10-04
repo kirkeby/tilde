@@ -1,5 +1,10 @@
-*~
+# Editor and language turds
 tags
+*~
+*.swp
+*.o
+*.py[co]
+a.out
 
 # Directories common in ~
 /VirtualBox VMs
