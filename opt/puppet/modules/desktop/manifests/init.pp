@@ -16,6 +16,7 @@ class desktop {
                 'mutt', 'isync', 'pidgin-sipe',
                'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
                'liblockfile-bin',
+               'intel-microcode',
                ]:
         ensure => present,
     }
