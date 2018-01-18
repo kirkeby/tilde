@@ -5,7 +5,6 @@ import vim
 
 
 def CtrlPPyMatch():
-    print('hello?!')
     items = vim.eval('a:items')
     astr = vim.eval('a:str')
     lowAstr = astr.lower()
@@ -35,8 +34,6 @@ def CtrlPPyMatch():
             re.escape(piece)
             for piece in filter(None, pieces)
         )
-        #with open(os.path.expanduser('~/pymatcher.log'), 'a+') as d:
-        #    d.write('text/pieces/regex: %r %r %r\n' % (astr, pieces, regex))
 
     res = []
     prog = re.compile(regex)
