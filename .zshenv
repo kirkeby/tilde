@@ -15,6 +15,11 @@ done
 # Source rustup env if installed
 test -f $HOME/.cargo/env && source $HOME/.cargo/env
 
+# Tell cargo to put build-artifacts in per $LOGNAME sub-directories of
+# target/, so running cargo inside/outside vagrant does not clobber each
+# other.
+export CARGO_TARGET_DIR=target/${LOGNAME}/
+
 # Source emsdk env if installed
 test -f $HOME/opt/emsdk/emsdk_env.sh && source $HOME/opt/emsdk/emsdk_env.sh
 

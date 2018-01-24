@@ -10,6 +10,7 @@
 [user]
     name = Sune Kirkeby
     email = mig@ibofobi.dk
+[core]
     excludesfile = ~/.gitignore
 [fetch]
     prune = true
