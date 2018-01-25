@@ -18,3 +18,7 @@
     default = current
 [pull]
     default = current
+
+# Default to work profile for checkouts in ~/work/
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
