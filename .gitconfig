@@ -12,6 +12,8 @@
     email = mig@ibofobi.dk
 [core]
     excludesfile = ~/.gitignore
+[pager]
+    branch = false
 [fetch]
     prune = true
 [push]
