@@ -4,12 +4,13 @@ Exec {
 
 $desktop = false;
 
-node slaptop, slappy, moria, erewhon {
+node ski-laptop, moria, erewhon {
     $desktop = true;
 
     include common
     include dnsmasq
-    include spotify
+    # Spotify is a fancy snap now.
+    #include spotify
     include desktop
     include cacerts
     include postfix

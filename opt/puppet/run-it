@@ -6,7 +6,8 @@ cd `dirname $0`
 
 # Suck a bit fat cock, Ubuntu, there was no fucking reason to rename
 # packages and break everything.
-if [ `lsb_release --short --codename` = zesty ] ; then
+release=`lsb_release --short --codename`
+if [ $release = zesty -o $release = bionic ] ; then
     sudo apt install --yes puppet
     sudo puppet apply --verbose --modulepath=$PWD/modules $PWD/site.pp
 else

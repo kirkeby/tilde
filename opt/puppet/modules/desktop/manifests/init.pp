@@ -5,15 +5,12 @@ class desktop {
 
     ### Packages I use on my desktops.
     package { ['redshift', 'numlockx',
-               'haskell-platform',
-               'haskell-platform-doc',
-               'haskell-platform-prof',
                'network-manager-openvpn',
                'network-manager-openvpn-gnome',
                'remmina-plugin-rdp',
                'xclip',
-               'vim-gtk',
-                'mutt', 'isync', 'pidgin-sipe',
+               'vim-gtk3',
+                'mutt', 'isync',
                'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
                'liblockfile-bin',
                'intel-microcode',
