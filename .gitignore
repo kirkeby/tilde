@@ -30,8 +30,9 @@ a.out
 # ~/ is MY FUCKING HOME DIRECTORY, DO NOT FUCKING POLLUTE IT WITH YOUR SHIT!
 /snap
 
-# Ignore dot-files in ~
+# Ignore dot-files in ~, with a few exceptions
 /.*
+!/.ssh
 
 # Random files
 /bin/fetchmail.lock

@@ -6,5 +6,18 @@ cd $HOME
 
 ln -sf ../../bin/post-checkout .git/hooks/post-checkout
 
+# Update submodules
 git submodule update --init
 git submodule foreach --recursive 'git submodule update --init'
+
+# Update ssh config (the fancy new Include directive does not work in any way
+# I can figure out, and I don't have it available everywhere yet, so this.)
+cat <<EOF > ~/.ssh/config.new
+# WARNING WARNING WARNING
+#   This file is automatically updated from ~/.ssh/config.d by
+#   ~/bin/post-checkout
+# WARNING WARNING WARNING
+EOF
+cat `run-parts --list ~/.ssh/config.d` >> ~/.ssh/config.new
+chmod a-w ~/.ssh/config.new
+mv -f ~/.ssh/config.new ~/.ssh/config
