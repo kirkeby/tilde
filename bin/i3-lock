@@ -9,5 +9,5 @@ dbus-send \
     /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
 xset dpms 90 120 180
-i3lock --nofork --ignore-empty-password
+i3lock --nofork --ignore-empty-password --color=ff66ff
 xset -dpms
