@@ -14,6 +14,3 @@ xautolock \
 
 # Compose key FTW
 setxkbmap -option compose:caps
-
-# Desktop background
-feh --bg-scale `find ~/Pictures/desktop-backgrounds/ -type f | shuf -n 1`

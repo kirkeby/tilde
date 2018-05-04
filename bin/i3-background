@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while true
+do
+    # Desktop background
+    feh --bg-scale `find ~/Pictures/desktop-backgrounds/ -type f | shuf -n 1`
+
+    # Naptime!
+    sleep 900
+done

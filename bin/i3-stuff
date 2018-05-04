@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    play-pause)
+        dbus-send \
+            --print-reply \
+            --dest=org.mpris.MediaPlayer2.spotify \
+            /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+        ;;
+esac

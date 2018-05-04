@@ -28,3 +28,6 @@ pgrep -f redshift || redshift -l 56:11 &
 # auto-starting nm-applet, because my home-directory is not from
 # this machine orignally, are you flipping insane?
 pgrep -f nm-applet || nm-applet &
+
+# Need a compositor apparently?!
+#xompton -CGb
