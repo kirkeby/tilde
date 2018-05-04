@@ -1,0 +1,30 @@
+#!/bin/sh
+
+echo "I am $HOME/.xprofile . . ."
+
+# I am not handicapped
+export NO_AT_BRIDGE=1
+
+# Need one of these :(
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
+
+# Make sure the first external monitor is primary.
+external_monitor=`\
+    xrandr \
+    | grep ' connected' \
+    | egrep -v 'LVDS|DVI|eDP-1' \
+    | cut -f 1 -d ' ' \
+    | head -1`
+xrandr --output $external_monitor --primary
+
+# Yeah!
+# Hardcoded location of Copenhagen, because apparently the geoclue provider
+# does not always work (probably gets confused by a lack of network.)
+pgrep -f redshift || redshift -l 56:11 &
+
+# What the fuck are you doing to my desktop, Gnome?! Suddenly not
+# auto-starting nm-applet, because my home-directory is not from
+# this machine orignally, are you flipping insane?
+pgrep -f nm-applet || nm-applet &
