@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "I am $0 . . ."
+
+## Pause Por La Musica!
+dbus-send \
+    --print-reply \
+    --dest=org.mpris.MediaPlayer2.spotify \
+    /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+
+xset dpms 90 120 180
+i3lock --nofork --ignore-empty-password
+xset -dpms
