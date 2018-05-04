@@ -4,8 +4,16 @@ set -e
 
 echo "I am $0 . . ."
 
-#xautolock -time 3 -locker ~/bin/i3-lock -detect-sleep -notify -notifier "'notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
+# Yes, plz.
+xautolock \
+    -time 10 \
+    -locker ~/bin/i3-lock \
+    -detect-sleep \
+    -notify \
+    -notifier "'notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
 
+# Compose key FTW
 setxkbmap -option compose:caps
 
+# Desktop background
 feh --bg-scale `find ~/Pictures/desktop-backgrounds/ -type f | shuf -n 1`
