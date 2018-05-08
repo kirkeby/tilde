@@ -17,7 +17,9 @@ external_monitor=`\
     | egrep -v 'LVDS|DVI|eDP-1' \
     | cut -f 1 -d ' ' \
     | head -1`
-xrandr --output $external_monitor --primary
+if [ ! -z "$external_monitor" ] ; then
+    xrandr --output "$external_monitor" --primary
+fi
 
 # Yeah!
 # Hardcoded location of Copenhagen, because apparently the geoclue provider
