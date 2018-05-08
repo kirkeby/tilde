@@ -1,7 +1,3 @@
-" A bit more than two line-widths to allow for UI taking up some space.
-winsize 180 60
-vsplit
-
 " Pretty colors.
 colorscheme solarized
 
@@ -19,3 +15,8 @@ set listchars=tab:▸·,trail:·
 
 " 1) Shut up. 2) Stop giving me seizures.
 set visualbell t_vb=
+
+" A bit more than two line-widths to allow for UI taking up some space.
+" Must come last, so settings above are applied to both windows.
+"winsize 180 60
+"vsplit
