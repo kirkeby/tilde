@@ -8,6 +8,6 @@ dbus-send \
     --dest=org.mpris.MediaPlayer2.spotify \
     /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
-xset dpms 90 120 180
+xset dpms 900 1200 1800
 i3lock --nofork --ignore-empty-password --color=ff66ff
 xset -dpms
