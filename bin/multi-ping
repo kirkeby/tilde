@@ -58,7 +58,8 @@ def ping_one(opts, target):
         }
         msg.update(**kwargs)
         with stdout_lock:
-            print(json.dumps(msg))
+            sys.stdout.write(json.dumps(msg) + '\n')
+            sys.stdout.flush()
 
     expected_seq = 1
     for line in iter(lambda: child.stdout.readline(), None):
