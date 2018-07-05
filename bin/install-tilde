@@ -16,7 +16,8 @@ find . | while read name
 do
     dir=`dirname ~/$name`
     test -d $dir || mkdir -p $dir
-    test -e ~/$name || mv $name ~/$name
+    test -e ~/$name && mv -f ~/$name ~/$name.old
+    mv $name ~/$name
 done
 
 # Remove empty directories.
