@@ -13,7 +13,7 @@ import sys
 import time
 import thread
 
-datetime_format = '%Y-%m-%DT%H:%M:%S'
+datetime_format = '%Y-%m-%dT%H:%M:%S'
 
 stdout_lock = thread.allocate_lock()
 
@@ -57,6 +57,10 @@ def ping_one(opts, target):
             'target': target,
         }
         msg.update(**kwargs)
+        msg = {
+            key: field_parsers.get(key, unicode)(val)
+            for key, val in msg.items()
+        }
         with stdout_lock:
             sys.stdout.write(json.dumps(msg) + '\n')
             sys.stdout.flush()
@@ -104,6 +108,12 @@ patterns = [
         'icmp_seq=(?P<seq>\d+) ttl=(?P<ttl>\d+) time=(?P<time>.*) ms$'
     )),
 ]
+field_parsers = {
+    'seq': int,
+    'ttl': int,
+    'bytes': int,
+    'time': float,
+}
 
 
 if __name__ == '__main__':
