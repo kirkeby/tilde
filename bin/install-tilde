@@ -14,10 +14,8 @@ fi
 mv .git $HOME/.git
 find . | while read name
 do
-    dir=`dirname ~/$name`
-    test -d $dir || mkdir -p $dir
-    test -e ~/$name && mv -f ~/$name ~/$name.old
-    mv $name ~/$name
+    test -f ~/$name && mv -f ~/$name ~/$name.old
+    test -e ~/$name || mv -f $name ~/$name
 done
 
 # Remove empty directories.
