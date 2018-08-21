@@ -88,6 +88,11 @@ autocmd FileType go compiler go
 " *shudder*
 autocmd FileType go setlocal noexpandtab shiftwidth=8 tabstop=8 softtabstop=8 nolist tw=0 autoindent smartindent makeprg=make
 
+autocmd BufWritePre *
+\ if !isdirectory(expand("<afile>:p:h")) |
+    \ call mkdir(expand("<afile>:p:h"), "p") |
+\ endif
+
 " CtrlP ignores
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist|github.com)$'
