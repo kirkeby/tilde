@@ -3,7 +3,7 @@
 while true
 do
     # Desktop background
-    feh --bg-fill `find ~/Pictures/desktop-backgrounds/ -type f | shuf -n 1`
+    feh --bg-max `find ~/Pictures/desktop-backgrounds/ -type f | shuf -n 1`
 
     # Naptime!
     sleep 900
