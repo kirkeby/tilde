@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 # Make sure any external monitor is primary.
 external_monitor=`xrandr | grep ' connected' | egrep -v 'LVDS|DVI' | cut -f 1 -d ' '`
 xrandr --output $external_monitor --primary
@@ -13,16 +15,14 @@ xrandr --output $external_monitor --primary
 pgrep -f redshift || redshift -l 56:11 &
 
 # Slow down the mouse at home bit.
-if xinput | grep -q "Logitech G403" ; then
-    # Don't ask me why, but xinput can not find its own names, so use id
-    mouse_id=`xinput | grep G403 | head -1 | sed -e 's/.*id=\([0-9]*\).*/\1/'`
-    xinput --set-prop $mouse_id "Device Accel Constant Deceleration" 3
-fi
+for mouse_id in `xinput | grep G403 | sed -e 's/.*id=\([0-9]*\).*/\1/'`
+do
+    xinput --set-prop "$mouse_id" "libinput Accel Speed" -0.5
+done
 
 # A special place in Hell is reserved for Dropbox, will you just stop eating
 # all my damn CPU, memory and I/O all the time?! Thanks.
 pgrep -f dropbox || (
-
     # Fuck whichever moron first decided to preallocate virtual memory in
     # processes, it completely at utterly fucks with memory-limiting processes
     # via ulimit.
