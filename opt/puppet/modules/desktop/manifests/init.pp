@@ -4,25 +4,33 @@ class desktop {
     }
 
     ### Packages I use on my desktops.
-    package { ['redshift', 'numlockx',
-               'network-manager-openvpn',
-               'network-manager-openvpn-gnome',
-               'remmina-plugin-rdp',
-               'xclip',
-               'vim-gtk3',
-                'mutt', 'isync',
-               'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
-               'liblockfile-bin',
-               'intel-microcode',
-               ]:
+    package {
+        [
+            'redshift', 'numlockx',
+            'network-manager-openvpn',
+            'network-manager-openvpn-gnome',
+            'remmina-plugin-rdp',
+            'xclip',
+            'vim-gtk3',
+            'mutt', 'isync',
+            'vagrant', 'virtualbox', 'virtualbox-dkms', 'virtualbox-qt',
+            'liblockfile-bin',
+            'intel-microcode',
+        ]:
         ensure => present,
     }
 
     ### Packages I do not want.
-    package { [
+    package {
+        [
             'gnome-user-share', 'mate-user-share',
+            # libinput is a plague upon the Earth, and I wish it would die in
+            # firey purge of goodness (fucking asshat libinput developers do
+            # not support mouse acceleration configuration, so fuck them and
+            # their useless incompetent shit-software.)
+            'xserver-xorg-input-libinput-dev',  'xserver-xorg-input-libinput',
         ]:
-            ensure => absent,
+        ensure => absent,
     }
 
     ### Avahi can bite my shiny metal ass!
