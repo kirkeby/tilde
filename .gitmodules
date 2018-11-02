@@ -10,6 +10,3 @@
 [submodule ".vim/bundle/rust"]
 	path = .vim/bundle/rust
 	url = https://github.com/rust-lang/rust.vim
-[submodule ".vim/bundle/vim-rooter"]
-	path = .vim/bundle/vim-rooter
-	url = https://github.com/airblade/vim-rooter
