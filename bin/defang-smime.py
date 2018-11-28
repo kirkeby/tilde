@@ -3,17 +3,23 @@
 import io
 import os
 import rfc822
+import socket
 import subprocess
 import sys
+import time
 
 key_file = os.path.expanduser('~/.smime/keys/9ad2c83b.0')
 backup_folder = os.path.expanduser('~/work/Mails-before-smime-decrypt')
+# Icky, but required.
+__defang_counter = [0]
 
 
 def main():
     for filename in sys.argv[1:]:
+        if not os.path.exists(filename):
+            # Assume it's a silently failed shell-glob.
+            continue
         defang_smime(filename)
-
 
 def defang_smime(path):
     msg = rfc822.Message(open(path, 'rb'))
@@ -43,8 +49,21 @@ def defang_smime(path):
             shell=True,
         )
 
+    # Generate a new path for the changed mail, so mbsync knows it has not
+    # seen it before.
+    new_name = '{}.{}_{}.{}'.format(
+        int(time.time()),
+        os.getpid(),
+        __defang_counter[0],
+        socket.gethostname(),
+    )
+    __defang_counter[0] += 1
+    new_path = os.path.join(os.path.dirname(path), new_name)
+
     os.rename(path, backup_path)
-    os.rename(tmppath, path)
+    os.rename(tmppath, new_path)
+
+    print 'Successfully S/MIME-defanged %s -> %s' % (path, new_path)
 
 
 if __name__ == '__main__':
