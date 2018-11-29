@@ -4,7 +4,7 @@
 
 import io
 import os
-import rfc822
+import mimetools
 import socket
 import subprocess
 import sys
@@ -33,10 +33,10 @@ def main():
 
 
 def defang_smime(path):
-    msg = rfc822.Message(open(path, 'rb'))
-    content_type = msg.getheader('Content-Type', '')
-    content_type = content_type.split(';')[0]
-    if content_type != 'application/pkcs7-mime':
+    msg = mimetools.Message(open(path, 'rb'))
+    if msg.gettype() != 'application/pkcs7-mime':
+        return
+    if msg.getparam('smime-type') != 'enveloped-data':
         return
 
     backup_path = os.path.join(backup_folder, os.path.basename(path))
