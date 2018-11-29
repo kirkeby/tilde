@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Defang awful horrible Shit/MIME messages.
 
 import io
@@ -15,11 +17,20 @@ __defang_counter = [0]
 
 
 def main():
+    errors = False
     for filename in sys.argv[1:]:
         if not os.path.exists(filename):
             # Assume it's a silently failed shell-glob.
             continue
-        defang_smime(filename)
+        try:
+            defang_smime(filename)
+        except Exception:
+            print 'Failed to S/MIME-defang %s, leaving in-place' % filename
+            errors = True
+
+    if errors:
+        sys.exit(1)
+
 
 def defang_smime(path):
     msg = rfc822.Message(open(path, 'rb'))
