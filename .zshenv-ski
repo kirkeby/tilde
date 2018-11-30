@@ -3,3 +3,5 @@ export GIT_AUTHOR_EMAIL='ski@csis.dk'
 export GIT_COMMITTER_EMAIL='ski@csis.dk'
 export PYTHONPATH=$HOME/work/unixy/python
 export PATH=/opt/python2.7/bin:$PATH
+export PATH=$HOME/work/unixy/bin:$PATH
+export PATH=$HOME/work/unixy/python/bin:$PATH
