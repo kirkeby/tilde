@@ -1,2 +1,2 @@
 text/html; elinks -dump -dump-charset utf-8 -force-html %s; copiousoutput; description=HTML Text
-text/calendar; ~/bin/show-vcalendar %s; copiousoutput
+text/calendar; ~/bin/vcal --all %s; copiousoutput
