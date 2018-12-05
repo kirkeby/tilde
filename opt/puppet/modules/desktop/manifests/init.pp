@@ -61,4 +61,10 @@ class desktop {
     file { '/etc/udev/rules.d/10-openmono.rules':
         source => "puppet:///modules/desktop/10-openmono.rules",
     }
+
+    ### Get rid of Mate's brain-damaged Firefox fuckups.
+    exec { "disable-mate-firefox-prefs":
+        command => "dpkg-divert --add --local --rename /usr/lib/firefox/defaults/pref/all-ubuntumate.js",
+        onlyif => "test -f /usr/lib/firefox/defaults/pref/all-ubuntumate.js"
+    }
 }
