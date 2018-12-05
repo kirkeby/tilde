@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=my-gnome-startup
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=my-gnome-startup
+Name=my-gnome-startup
+Comment[en_US]=Make Gnome a better home.
+Comment=Make Gnome a better home.
