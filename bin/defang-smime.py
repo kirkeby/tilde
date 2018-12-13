@@ -39,6 +39,8 @@ def defang_smime(path):
     if msg.getparam('smime-type') != 'enveloped-data':
         return
 
+    if not os.path.exists(backup_folder):
+        os.makedirs(backup_folder)
     backup_path = os.path.join(backup_folder, os.path.basename(path))
     assert not os.path.exists(backup_path)
 
