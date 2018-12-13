@@ -32,9 +32,15 @@ def main():
         sys.exit(1)
 
 
+# Because ofcourse
+smime_types = set([
+    'application/pkcs7-mime',
+    'application/x-pkcs7-mime',
+])
+
 def defang_smime(path):
     msg = mimetools.Message(open(path, 'rb'))
-    if msg.gettype() != 'application/pkcs7-mime':
+    if msg.gettype() not in smime_types:
         return
     if msg.getparam('smime-type') != 'enveloped-data':
         return
