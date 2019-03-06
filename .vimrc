@@ -54,10 +54,11 @@ imap <F1> <Esc>
 
 map <F5> :make<CR>
 
-let mapleader=","
+let mapleader=";"
 
-noremap <leader><leader> :make<cr>
 noremap <leader>. :lnext<cr>
+" <leader><leader> toggles between buffers
+nnoremap <leader><leader> <c-^>
 
 " Highlight evil hard tabs and trailing white-space (.gvimrc does this
 " differently, so skip this for GUI).
