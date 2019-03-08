@@ -13,6 +13,6 @@
 [submodule ".vim/bundle/vim-rooter"]
 	path = .vim/bundle/vim-rooter
 	url = https://github.com/airblade/vim-rooter
-[submodule "/home/ski/.vim/bundle/lightline.vim"]
-	path = /home/ski/.vim/bundle/lightline.vim
+[submodule ".vim/bundle/lightline.vim"]
+	path = .vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
