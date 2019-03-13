@@ -60,6 +60,8 @@ noremap <leader>. :lnext<cr>
 " <leader><leader> toggles between buffers
 nnoremap <leader><leader> <c-^>
 
+nnoremap <leader>f :!in-vagrant isort %<cr>
+
 " Highlight evil hard tabs and trailing white-space (.gvimrc does this
 " differently, so skip this for GUI).
 if !has("gui_running")
