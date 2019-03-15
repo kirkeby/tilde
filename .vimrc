@@ -101,3 +101,10 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|cov|venv|vendor|build|dist|github.com)$'
 let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
 let g:ctrlp_match_window = 'max:20,results:200'
+
+" LightLine
+let g:lightline = {
+  \ 'active': {
+  \   'left': [['mode', 'paste'], ['readonly', 'relativepath', 'modified']],
+  \ }
+\ }
