@@ -3,4 +3,7 @@
 --ignore-dir=build
 --ignore-dir=dist
 --ignore-dir=cov
+--ignore-dir=tmp
+--ignore-dir=dist
+--ignore-dir=.work
 --pager=less -r
