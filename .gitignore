@@ -38,6 +38,7 @@ a.out
 !/.ssh
 
 # Random files
+/bin/minikube
 /bin/fetchmail.lock
 /irclogs/*
 /flexo
