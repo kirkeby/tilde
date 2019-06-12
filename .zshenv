@@ -56,6 +56,8 @@ export _JAVA_OPTIONS="-Djava.net.preferIPv4Stack=true"
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
+export PYTHONSTARTUP=$HOME/.startup.py
+
 test -x $HOME/opt/go/bin/go && export GOROOT=$HOME/opt/go
 
 # Even more working around Gnome being brain-damaged, unsafe and stupid.
