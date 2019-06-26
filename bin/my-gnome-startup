@@ -17,7 +17,7 @@ pgrep -f redshift || redshift -l 56:11 &
 # Slow down the mouse at home bit.
 for mouse_id in `xinput | grep G403 | sed -e 's/.*id=\([0-9]*\).*/\1/'`
 do
-    xinput --set-prop "$mouse_id" "Device Accel Constant Deceleration" 3
+    xinput --set-prop "$mouse_id" "Device Accel Constant Deceleration" 1.5
 done
 
 # A special place in Hell is reserved for Dropbox, will you just stop eating
