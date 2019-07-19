@@ -48,6 +48,10 @@ alias grep='grep --exclude=*~ --color=auto'
 # worked since before you we're born?
 export QUOTING_STYLE=literal
 
+# Seriously, just find somewhere that does not ruin directory listings and tab
+# completion, dumbass python-dev.
+export PYTHONDONTWRITEBYTECODE=fuck-off-python-dev
+
 export TMPDIR=/tmp/$LOGNAME
 test -d $TMPDIR || mkdir -p $TMPDIR
 
