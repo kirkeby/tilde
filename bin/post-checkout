@@ -22,5 +22,5 @@ mv -f ~/.ssh/config.new ~/.ssh/config
 git submodule update --init
 git submodule foreach --recursive 'git submodule update --init'
 
-# Make sure vim has a place for undo-files
-mkdir -p ~/.vim/undo
+# Make sure vim has a place for its files
+mkdir -p ~/.vim/{backup,undo,swap}
