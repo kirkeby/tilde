@@ -45,3 +45,6 @@ a.out
 /ibofobi.dk
 /TODO
 /*.pdf
+
+# Fixes for submodules missing gitignores
+doc/tags-cn
