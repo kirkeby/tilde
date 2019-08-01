@@ -89,7 +89,7 @@ done
 
 # Create a persistent shared ssh-agent, if we're running on a desktop and
 # did not find one above.
-if [ "$DISPLAY" = ":0.0" -a -z "$SSH_AUTH_SOCK" ] ; then
+if [ -n "$DISPLAY" -a -z "$SSH_AUTH_SOCK" ] ; then
     ssh-agent | egrep -v "^echo" > $TMPDIR/ssh-agent.env
     . $TMPDIR/ssh-agent.env
 fi
