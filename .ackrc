@@ -6,4 +6,5 @@
 --ignore-dir=tmp
 --ignore-dir=dist
 --ignore-dir=.work
+--ignore-file=is:.noseids
 --pager=less -r
