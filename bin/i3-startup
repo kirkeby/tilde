@@ -4,6 +4,8 @@ set -e
 
 echo "I am $0 . . ."
 
+my-gnome-startup
+
 # Yes, plz.
 xautolock \
     -time 10 \

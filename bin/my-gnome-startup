@@ -1,40 +1,19 @@
 #!/bin/sh
 
-set -x
-
 # Make sure any external monitor is primary.
 external_monitor=`xrandr | grep ' connected' | egrep -v 'LVDS|DVI' | cut -f 1 -d ' '`
 xrandr --output $external_monitor --primary
-
-# Fuck off, Numlock-overlay-keys.
-[ -x /usr/bin/numlockx ] && numlockx off
 
 # Yeah!
 # Hardcoded location of Copenhagen, because apparently the geoclue provider
 # does not always work (probably gets confused by a lack of network.)
 pgrep -f redshift || redshift -l 56:11 &
 
-# Slow down the mouse at home bit.
+# Slow down the mouse at home a tiny bit.
 for mouse_id in `xinput | grep G403 | sed -e 's/.*id=\([0-9]*\).*/\1/'`
 do
     xinput --set-prop "$mouse_id" "Device Accel Constant Deceleration" 1.5
 done
-
-# A special place in Hell is reserved for Dropbox, will you just stop eating
-# all my damn CPU, memory and I/O all the time?! Thanks.
-pgrep -f dropbox || (
-    # Fuck whichever moron first decided to preallocate virtual memory in
-    # processes, it completely at utterly fucks with memory-limiting processes
-    # via ulimit.
-    # Dropbox starts with a VIRT size of > 2GB, which is just fucking insane.
-    ulimit -v `expr 3 \* 1024 \* 1024`
-    exec nice -n 20 ionice -c 3 dropbox start
-)
-
-# What the fuck are you doing to my desktop, Gnome?! Suddenly not
-# auto-starting nm-applet, because my home-directory is not from
-# this machine orignally, are you flipping insane?
-pgrep -f nm-applet || nm-applet &
 
 # Make sure both my local users have full X access.
 [ "$LOGNAME" = "sune" ] && xhost +SI:localuser:ski
