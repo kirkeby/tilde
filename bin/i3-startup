@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 echo "I am $0 . . ."
 
 my-gnome-startup
