@@ -79,7 +79,7 @@ do
     # So, to summarize: We work around the extreme uselessness of ssh-add
     # like this:
     export SSH_AUTH_SOCK="$socket"
-    if [ "`ssh-add -l 2>&1`" = "Could not open a connection to your authentication agent." ]
+    if [ "`timeout 1 ssh-add -l 2>&1`" = "Could not open a connection to your authentication agent." ]
     then
         rm -f $SSH_AUTH_SOCK
         unset SSH_AUTH_SOCK
