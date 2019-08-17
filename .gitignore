@@ -1,11 +1,3 @@
-# Editor and language turds
-tags
-*~
-*.swp
-*.o
-*.py[co]
-a.out
-
 # Directories common in ~
 /VirtualBox VMs
 /Mail
@@ -33,10 +25,6 @@ a.out
 # ~/ is MY FUCKING HOME DIRECTORY, DO NOT FUCKING POLLUTE IT WITH YOUR SHIT!
 /snap
 
-# Ignore dot-files in ~, with a few exceptions
-/.*
-!/.ssh
-
 # Random files
 /bin/minikube
 /bin/fetchmail.lock
@@ -46,5 +34,42 @@ a.out
 /TODO
 /*.pdf
 
-# Fixes for submodules missing gitignores
-doc/tags-cn
+# Ignore common junk in ~
+/.ICEauthority
+/.Private
+/.Xauthority
+/.*history
+/.cache
+/.cargo
+/.compiz
+/.config
+/.dbus
+/.dmrc
+/.ecryptfs
+/.gconf
+/.gimp*
+/.gksu.lock
+/.gnome
+/.gtk-bookmarks
+/.lesshst
+/.local
+/.mozilla
+/.multirust
+/.octave_hist
+/.pki
+/.pulse-cookie
+/.rustup
+/.steam*
+/.sudo_as_admin_successful
+/.thumbnails
+/.thunderbird
+/.vagrant.d/
+/.vim/undo
+/.viminfo
+/.wget-hsts
+/.xargo/
+/.xsession-errors*
+/.zcompdump
+
+# Except this!
+!/.config/i3

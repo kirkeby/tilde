@@ -1,0 +1,11 @@
+# Editor and language turds
+tags
+*~
+*.swp
+*.o
+a.out
+*.py[co]
+__pycache__
+
+# Fixes for submodules missing gitignores
+doc/tags-cn
