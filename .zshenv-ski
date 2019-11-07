@@ -1,3 +1,5 @@
+vagrant() { (cd ~/work/unixy/vagrant && exec `/usr/bin/which vagrant` "$@") }
+
 export DEBEMAIL='ski@csis.dk'
 export GIT_AUTHOR_EMAIL='ski@csis.dk'
 export GIT_COMMITTER_EMAIL='ski@csis.dk'
