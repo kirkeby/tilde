@@ -18,9 +18,5 @@ cat `run-parts --list ~/.ssh/config.d` >> ~/.ssh/config.new
 chmod a-w ~/.ssh/config.new
 mv -f ~/.ssh/config.new ~/.ssh/config
 
-# Update submodules
-git submodule update --init
-git submodule foreach --recursive 'git submodule update --init'
-
 # Make sure vim has a place for its files
 mkdir -p ~/.vim/{backup,undo,swap}
