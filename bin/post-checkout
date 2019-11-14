@@ -19,4 +19,6 @@ chmod a-w ~/.ssh/config.new
 mv -f ~/.ssh/config.new ~/.ssh/config
 
 # Make sure vim has a place for its files
-mkdir -p ~/.vim/{backup,undo,swap}
+mkdir -p ~/.vim/backup
+mkdir -p ~/.vim/undo
+mkdir -p ~/.vim/swap
