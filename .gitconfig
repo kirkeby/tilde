@@ -24,8 +24,3 @@
 # Default to work profile for checkouts in ~/work/
 [includeIf "gitdir:~/work/"]
     path = ~/work/.gitconfig
-[mergetool]
-    prompt = false
-[merge]
-    conflictstyle = diff3
-    tool = gvimdiff
