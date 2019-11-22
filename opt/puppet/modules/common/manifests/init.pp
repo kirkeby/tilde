@@ -40,4 +40,7 @@ class common {
     file { "/etc/python2.7/sitecustomize.py":
         source => 'puppet:///modules/common/sitecustomize.py',
     }
+    file { "/etc/python3.7/sitecustomize.py":
+        source => 'puppet:///modules/common/sitecustomize.py',
+    }
 }
