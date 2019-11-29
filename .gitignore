@@ -66,6 +66,7 @@
 /.thunderbird
 /.vagrant.d/
 /.vim/undo
+/.vim/plugged
 /.viminfo
 /.wget-hsts
 /.xargo/

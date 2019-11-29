@@ -1,3 +1,14 @@
+call plug#begin('~/.vim/plugged')
+Plug 'altercation/vim-colors-solarized'
+"Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-rooter'
+Plug 'itchyny/lightline.vim'
+Plug 'mileszs/ack.vim'
+Plug 'dense-analysis/ale'
+Plug 'rust-lang/rust.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()
+
 set autoread
 set backup
 set undofile
@@ -31,13 +42,6 @@ set tags=~/tags
 " X clipboard. Vim is *not* a fucking GUI application!
 set guioptions=-a
 set clipboard=""
-
-" Try to infect with Pathogen.
-try
-  call pathogen#infect()
-  call pathogen#helptags()
-catch
-endtry
 
 syntax enable
 set background=dark
