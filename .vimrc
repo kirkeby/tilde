@@ -60,6 +60,10 @@ noremap <leader>. :lnext<cr>
 " <leader><leader> toggles between buffers
 nnoremap <leader><leader> <c-^>
 
+" shortcuts to make various targets
+nnoremap <F5> :make test<CR>
+
+" shortcuts to forcibly fix code snafus
 nnoremap <leader>f :!in-vagrant isort %<cr>
 
 " Highlight evil hard tabs and trailing white-space (.gvimrc does this
@@ -84,8 +88,6 @@ autocmd BufNewFile,BufRead *.shpaml setlocal sw=2 sts=2
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set tw=68
 autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs compiler cargo
 autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs set tw=78
-autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs
-    \ nnoremap <buffer> <F5> :make check<CR>
 
 autocmd FileType go compiler go
 " *shudder*
