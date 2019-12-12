@@ -27,8 +27,6 @@
 /snap
 
 # Random files
-/bin/minikube
-/bin/fetchmail.lock
 /irclogs/*
 /flexo
 /ibofobi.dk

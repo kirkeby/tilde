@@ -1,6 +1,6 @@
 # Reset PATH to a sensible default
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 
 # Add private software installations
 for bin in ~/opt/*/bin(N)
