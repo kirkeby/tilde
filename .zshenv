@@ -39,7 +39,7 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 export LESS='--RAW-CONTROL-CHARS --chop-long-lines --ignore-case'
-export LANG=en_US.UTF-8
+export LANG=C.UTF-8
 export TIME_STYLE=long-iso  # anything else is insane...
 export BLOCK_SIZE="'1"  # thosands commas
 alias grep='grep --exclude=*~ --color=auto'
