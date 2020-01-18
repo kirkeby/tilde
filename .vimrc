@@ -92,6 +92,8 @@ autocmd BufNewFile,BufRead *.shpaml setlocal sw=2 sts=2
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set tw=68
 autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs compiler cargo
 autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs set tw=78
+autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs
+    \ nnoremap <buffer> <F5> :make test<CR>
 
 autocmd FileType go compiler go
 " *shudder*
