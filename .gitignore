@@ -67,6 +67,8 @@
 /.vim/undo
 /.vim/plugged
 /.viminfo
+/.aws
+/.ecr
 /.wget-hsts
 /.xargo/
 /.xsession-errors*
