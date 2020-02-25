@@ -24,3 +24,8 @@
 # Default to work profile for checkouts in ~/work/
 [includeIf "gitdir:~/work/"]
     path = ~/work/.gitconfig
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
