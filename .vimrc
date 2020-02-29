@@ -19,6 +19,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
+set smartindent
 set ignorecase
 set smartcase
 set backspace=indent,eol,start
@@ -48,6 +49,7 @@ set background=dark
 set list
 
 filetype plugin on
+filetype plugin indent off
 
 " Various keybindings
 noremap <F12> <Esc>:syntax sync fromstart<CR>
