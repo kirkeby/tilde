@@ -5,7 +5,7 @@ Plug 'airblade/vim-rooter'
 Plug 'itchyny/lightline.vim'
 Plug 'mileszs/ack.vim'
 "Plug 'dense-analysis/ale'
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
