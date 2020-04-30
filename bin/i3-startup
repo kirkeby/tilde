@@ -12,5 +12,11 @@ xautolock \
     -notify \
     -notifier "'notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" &
 
+# YEEEES, PLS!
+syndaemon -i 1.5 -t -k &
+
 # Compose key FTW
 setxkbmap -option compose:caps
+
+# Opacity (aka transparency)
+compton -b
