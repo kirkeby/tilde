@@ -1,0 +1,7 @@
+#!/bin/sh
+
+exec i3-nagbar \
+    -t warning \
+    -m 'Sure you want to set fire to this session?' \
+    -b 'KILL IT WITH FIRE!' \
+    'loginctl terminate-session $XDG_SESSION_ID'
