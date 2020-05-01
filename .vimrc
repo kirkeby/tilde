@@ -8,6 +8,7 @@ Plug 'mileszs/ack.vim'
 "Plug 'dense-analysis/ale'
 "Plug 'rust-lang/rust.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 set autoread
@@ -53,6 +54,7 @@ filetype plugin indent on
 " Various keybindings
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
+nmap <F8> :TagbarToggle<CR>
 
 map <F1> <Esc>
 imap <F1> <Esc>
