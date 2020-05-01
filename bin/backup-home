@@ -7,14 +7,12 @@
 cd ~
 exec tar -czv \
     --exclude VirtualBox\ VMs \
-    --exclude Dropbox \
+    --exclude ownCloud \
     --exclude Downloads \
     --exclude opt \
     --exclude .rvm \
     --exclude .rbenv \
     --exclude .cache \
-    --exclude .dropbox \
-    --exclude .dropbox-dist \
     --exclude .thumbnails \
     --exclude .adobe \
     --exclude .mozilla \
