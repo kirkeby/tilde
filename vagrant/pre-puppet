@@ -1,7 +1,0 @@
-#!/bin/sh
-
-set -e
-
-apt-get install --yes zsh puppet-common
-
-chsh --shell /usr/bin/zsh vagrant
