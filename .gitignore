@@ -5,7 +5,6 @@
 /public_html
 /Documents
 /Downloads
-/Dropbox
 /Backup
 /Pictures
 /Projects
@@ -14,7 +13,7 @@
 /Private
 /Music
 /Desktop
-/Nextcloud
+/ownCloud
 # Fuck you Unity, this is *my* damned home-directory you shit.
 /Unity
 /work

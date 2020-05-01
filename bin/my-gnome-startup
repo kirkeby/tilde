@@ -9,7 +9,7 @@ xrandr --output $external_monitor --primary
 # does not always work (probably gets confused by a lack of network.)
 pgrep -f redshift || redshift -l 56:11 &
 
-pgrep -f nextcloud || nextcloud &
+pgrep -f owncloud || owncloud &
 
 # Slow down the mouse at home a tiny bit.
 for mouse_id in `xinput | grep G403 | sed -e 's/.*id=\([0-9]*\).*/\1/'`
