@@ -1,5 +1,5 @@
 " Pretty colors.
-colorscheme solarized
+colorscheme gruvbox
 
 " A pretty font.
 set guifont=Ubuntu\ Mono\ 13

@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 "Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
 Plug 'itchyny/lightline.vim'
