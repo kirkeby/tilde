@@ -3,17 +3,13 @@
 /Mail
 /quotes
 /public_html
-/Documents
 /Downloads
 /Backup
-/Pictures
 /Projects
 /Private
 /Random
-/Private
-/Music
-/Desktop
 /ownCloud
+/.desktop
 # Fuck you Unity, this is *my* damned home-directory you shit.
 /Unity
 /work
