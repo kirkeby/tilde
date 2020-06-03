@@ -36,6 +36,7 @@
 /.cache
 /.cargo
 /.compiz
+/.terraform.d
 /.config
 /.dbus
 /.dmrc
