@@ -2,9 +2,9 @@
 
 # Install this checkout in $HOME.
 
-# Pre-flight checks.
 cd "`dirname $0`/.."
 
+# Pre-flight check.
 if [ -e $HOME/.git ] ; then
     echo "Error: ~/.git already exists" >&2
     exit 1
@@ -12,18 +12,8 @@ fi
 
 # Install checkout.
 mv .git $HOME/.git
-find . | while read name
-do
-    test -f ~/$name && mv -f ~/$name ~/$name.old
-    test -e ~/$name || mv -f $name ~/$name
-done
+cd $HOME
 
-# Remove empty directories.
-cd ~
-find $OLDPWD -type d | sort -r | xargs rmdir 2>/dev/null
+git checkout
 
-# Optionally configure git.
-test -e ~/.gitconfig || ./bin/configure-git
-
-# Checkout submodules.
 ~/bin/post-checkout
