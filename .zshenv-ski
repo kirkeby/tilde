@@ -7,3 +7,5 @@ export PYTHONPATH=$HOME/work/unixy/python
 export PATH=/opt/python2.7/bin:$PATH
 export PATH=$HOME/work/unixy/bin:$PATH
 export PATH=$HOME/work/unixy/python/bin:$PATH
+
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/work/terraform-admin.json
