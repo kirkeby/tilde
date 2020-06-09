@@ -3,7 +3,9 @@
 while true
 do
     # Desktop background
-    feh --bg-max "`find ~/ownCloud/desktop-backgrounds/ -type f | shuf -n 1`"
+    f="`find ~/ownCloud/desktop-backgrounds/ -type f | shuf -n 1`"
+    echo "randomly chosen background: $f"
+    feh --bg-max "$f"
 
     # Naptime!
     sleep 900
