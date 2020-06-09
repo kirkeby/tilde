@@ -3,6 +3,6 @@
 set -e
 
 export PYTHONPATH=$HOME/opt/stream2chromecast
-ffmpeg_opts="-levlevel warning -strict -2 -c:v h264 -c:a mp3 -preset veryfast"
+ffmpeg_opts="-loglevel warning -strict -2 -c:v h264 -c:a mp3 -preset veryfast"
 
 python -m stream2chromecast -transcodeopts "$ffmpeg_opts" -transcode "$@"
