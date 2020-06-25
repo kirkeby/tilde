@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+git branch -l --merged | grep -v master | xargs git branch -d
+
+git branch -l
