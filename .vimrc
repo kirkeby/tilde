@@ -33,6 +33,8 @@ set incsearch
 set viminfo='1000,f1,<50,s10,h,%
 set modeline
 set nofoldenable
+set nocindent
+set nosmartindent
 
 " When formatting text, recognize numbered lists.
 set formatoptions+=n
@@ -97,10 +99,6 @@ autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs compiler cargo
 autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs set tw=78
 autocmd BufNewFile,BufRead Cargo.toml,Cargo.lock,*.rs
     \ nnoremap <buffer> <F5> :make test<CR>
-
-autocmd FileType go compiler go
-" *shudder*
-autocmd FileType go setlocal noexpandtab shiftwidth=8 tabstop=8 softtabstop=8 nolist tw=0 autoindent smartindent makeprg=make
 
 autocmd BufWritePre *
 \ if !isdirectory(expand("<afile>:p:h")) |
