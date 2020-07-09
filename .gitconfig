@@ -12,6 +12,8 @@
     email = mig@ibofobi.dk
 [core]
     excludesfile = ~/.gitignore-global
+[commit]
+    verbose = true
 [pager]
     branch = false
 [fetch]
