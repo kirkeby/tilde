@@ -75,6 +75,10 @@ nnoremap <F5> :make test<CR>
 " shortcuts to forcibly fix code snafus
 nnoremap <leader>f :!in-vagrant isort %<cr>
 
+" disable utterly broken python indentation (wtf, no, typing colon in a string
+" is not a sign that you should mis-indent the whole line, vim)
+autocmd FileType python setlocal indentkeys=
+
 " Highlight evil hard tabs and trailing white-space (.gvimrc does this
 " differently, so skip this for GUI).
 if !has("gui_running")
