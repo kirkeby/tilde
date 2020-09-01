@@ -2,6 +2,6 @@
 
 set -e
 
-git branch -l --merged | grep -v master | xargs git branch -d
+git branch -l --merged | grep -v master | grep -vF '*' | xargs -r -- git branch -d
 
 git branch -l
