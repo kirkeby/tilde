@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+branch=`git symbolic-ref HEAD`
+
+git checkout master
+git pull --rebase
+git cleanup
+
+if git branch -l | grep -q $branch ; then
+    git checkout $branch
+fi
