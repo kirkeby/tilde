@@ -4,6 +4,10 @@
 external_monitor=`xrandr | grep ' connected' | egrep -v 'LVDS|DVI' | cut -f 1 -d ' '`
 xrandr --output $external_monitor --primary
 
+if [ `hostname` = moria ] ; then
+    xrandr --output DP-0 --rotate left
+fi
+
 # Yeah!
 # Hardcoded location of Copenhagen, because apparently the geoclue provider
 # does not always work (probably gets confused by a lack of network.)
