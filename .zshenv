@@ -43,7 +43,7 @@ unset LANGUAGE GDM_LANG `env | grep '^LC_' | sed 's/=.*//'`
 export LANG=C.UTF-8
 export TIME_STYLE=long-iso  # anything else is insane...
 export BLOCK_SIZE="'1"  # thosands commas
-alias grep='grep --exclude=*~ --color=auto'
+alias grep='grep --exclude="*~" --color=auto'
 
 # Dear Dimwitted Debian Developers, how about you stop changing shit that's
 # worked since before you we're born?
