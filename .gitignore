@@ -9,6 +9,11 @@
 /Private
 /Random
 /ownCloud
+/Desktop
+/Documents
+/Nextcloud
+/Pictures
+/vagrant
 /.desktop
 # Fuck you Unity, this is *my* damned home-directory you shit.
 /Unity
