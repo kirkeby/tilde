@@ -32,6 +32,8 @@ set nofoldenable
 set nocindent
 set nosmartindent
 
+let g:rooter_patterns = ['.git']
+
 " When formatting text, recognize numbered lists.
 set formatoptions+=n
 
