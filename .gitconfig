@@ -10,6 +10,8 @@
     excludesfile = ~/.gitignore-global
 [commit]
     verbose = true
+[rebase]
+    autoSquash = true
 [pager]
     branch = false
 [fetch]
