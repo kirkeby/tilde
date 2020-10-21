@@ -5,6 +5,7 @@ Plug 'airblade/vim-rooter'
 Plug 'itchyny/lightline.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'metakirby5/codi.vim'
 call plug#end()
 
 set autoread
