@@ -3,6 +3,7 @@
 [alias]
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    fix = "commit -an --fixup"
 [user]
     name = Sune Kirkeby
     email = mig@ibofobi.dk
