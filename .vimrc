@@ -10,6 +10,7 @@ call plug#end()
 
 set autoread
 set backup
+set backupdir=$HOME/.vim/backup
 set undofile
 set undodir=$HOME/.vim/undo
 set encoding=utf-8
