@@ -18,7 +18,7 @@ pgrep -f owncloud || owncloud &
 # Slow down the mouse at home a tiny bit.
 for mouse_id in `xinput | grep G403 | sed -e 's/.*id=\([0-9]*\).*/\1/'`
 do
-    xinput --set-prop "$mouse_id" "Device Accel Constant Deceleration" 1.5
+    xinput --set-prop "$mouse_id" "Device Accel Constant Deceleration" 1.4
 done
 
 # Make sure both my local users have full X access.
